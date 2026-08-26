@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T03:35:52.887556+00:00",
+  "updated": "2026-08-26T05:53:41.047523+00:00",
   "items": [
     {
       "title": "26年の半導体市場は1.6兆ドルに　メモリが54％占める",
@@ -77,6 +77,11 @@
       "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
     },
     {
+      "title": "JDIが鳥取工場の売却を完了　譲渡益5億円見込み",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news099.html",
+      "pubDate": "Tue, 25 Aug 2026 06:44:10 -0000"
+    },
+    {
       "title": "量子センシングの社会実装推進　東陽テクニカら共同研究",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news027.html",
       "pubDate": "Mon, 24 Aug 2026 12:35:28 -0000"
@@ -120,11 +125,6 @@
       "title": "半導体設計／検証でAIどう使う？ 「DVCon Japan」開催",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/21/news047.html",
       "pubDate": "Sat, 22 Aug 2026 01:05:37 -0000"
-    },
-    {
-      "title": "ICと受動部品を集約できる3次元実装技術、面積80％削減",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/21/news041.html",
-      "pubDate": "Sat, 22 Aug 2026 00:35:37 -0000"
     }
   ]
 }
