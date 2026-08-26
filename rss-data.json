@@ -1,6 +1,11 @@
 {
-  "updated": "2026-08-26T05:53:41.047523+00:00",
+  "updated": "2026-08-26T08:10:56.256624+00:00",
   "items": [
+    {
+      "title": "25年のイメージセンサー市場は過去最高、ソニーはシェア5割",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news049.html",
+      "pubDate": "Wed, 26 Aug 2026 08:10:56 -0000"
+    },
     {
       "title": "26年の半導体市場は1.6兆ドルに　メモリが54％占める",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news037.html",
@@ -10,11 +15,6 @@
       "title": "飲み込み型医療デバイス向けに高速無線通信技術、大阪公立大",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news026.html",
       "pubDate": "Wed, 26 Aug 2026 03:20:52 -0000"
-    },
-    {
-      "title": "AI自律実験の「ブラックボックス」を解く 人が使える成膜ルールに",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news066.html",
-      "pubDate": "Wed, 26 Aug 2026 03:05:52 -0000"
     },
     {
       "title": "令和8年熊本地震、半導体メーカー工場の対応状況【8/24 17時50分更新】",
@@ -37,6 +37,11 @@
       "pubDate": "Wed, 26 Aug 2026 02:50:52 -0000"
     },
     {
+      "title": "AI自律実験の「ブラックボックス」を解く 人が使える成膜ルールに",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news066.html",
+      "pubDate": "Wed, 26 Aug 2026 03:05:52 -0000"
+    },
+    {
       "title": "中国YMTCがIPOへ　AI需要で変わるNAND戦略",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news059.html",
       "pubDate": "Tue, 25 Aug 2026 07:29:10 -0000"
@@ -57,11 +62,6 @@
       "pubDate": "Tue, 25 Aug 2026 06:44:10 -0000"
     },
     {
-      "title": "量子センシングの社会実装推進　東陽テクニカら共同研究",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news027.html",
-      "pubDate": "Mon, 24 Aug 2026 12:35:28 -0000"
-    },
-    {
       "title": "パワーエレクトロニクス 最前線",
       "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/powerele/",
       "pubDate": "Mon, 13 Apr 2026 03:17:56 -0000"
@@ -75,6 +75,11 @@
       "title": "半導体後工程",
       "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/backend/index.html",
       "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
+    },
+    {
+      "title": "水や体液に強い厚さ約200nmの透明導電膜を開発、理研ら",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news028.html",
+      "pubDate": "Tue, 25 Aug 2026 06:59:10 -0000"
     },
     {
       "title": "JDIが鳥取工場の売却を完了　譲渡益5億円見込み",
@@ -120,11 +125,6 @@
       "title": "ADEKA、先端フォトレジスト向け光酸発生剤の生産力倍増へ",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/21/news051.html",
       "pubDate": "Sat, 22 Aug 2026 01:20:37 -0000"
-    },
-    {
-      "title": "半導体設計／検証でAIどう使う？ 「DVCon Japan」開催",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/21/news047.html",
-      "pubDate": "Sat, 22 Aug 2026 01:05:37 -0000"
     }
   ]
 }
