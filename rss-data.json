@@ -1,6 +1,41 @@
 {
-  "updated": "2026-08-28T01:31:00.009028+00:00",
+  "updated": "2026-08-28T21:54:47.741512+00:00",
   "items": [
+    {
+      "title": "Infineon、AI向け電源IC企業C2iを買収　垂直給電を強化",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news082.html",
+      "pubDate": "Fri, 28 Aug 2026 21:54:47 -0000"
+    },
+    {
+      "title": "V2X対応のワイヤレスエミュレーター開発、京都大",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news051.html",
+      "pubDate": "Fri, 28 Aug 2026 21:39:47 -0000"
+    },
+    {
+      "title": "次世代のコンピューティングを支える光伝送と光電融合",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news044.html",
+      "pubDate": "Fri, 28 Aug 2026 21:24:47 -0000"
+    },
+    {
+      "title": "令和8年熊本地震、半導体メーカー工場の対応状況【8/24 17時50分更新】",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2607/28/news101.html",
+      "pubDate": "Mon, 24 Aug 2026 11:50:28 -0000"
+    },
+    {
+      "title": "フィジカルAIが生み出す新たな「設計思想」――電子版2026年8月号",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/14/news063.html",
+      "pubDate": "Mon, 17 Aug 2026 01:33:24 -0000"
+    },
+    {
+      "title": "日本発のAIチップ新興LENZOも登壇　「Virtual EXPO 2026 夏」開催！",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/18/news092.html",
+      "pubDate": "Tue, 18 Aug 2026 08:15:07 -0000"
+    },
+    {
+      "title": "リチウムイオン電池の長寿命化へ新たな材料設計指針",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news050.html",
+      "pubDate": "Fri, 28 Aug 2026 21:09:47 -0000"
+    },
     {
       "title": "キオクシアとSandisk、日本に5兆円投資 北上に新棟建設",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news095.html",
@@ -17,19 +52,29 @@
       "pubDate": "Fri, 28 Aug 2026 01:00:59 -0000"
     },
     {
-      "title": "令和8年熊本地震、半導体メーカー工場の対応状況【8/24 17時50分更新】",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2607/28/news101.html",
-      "pubDate": "Mon, 24 Aug 2026 11:50:28 -0000"
+      "title": "富士フイルム、大分工場のポストCMPクリーナー生産力を3倍に",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news064.html",
+      "pubDate": "Fri, 28 Aug 2026 00:45:59 -0000"
     },
     {
-      "title": "フィジカルAIが生み出す新たな「設計思想」――電子版2026年8月号",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/14/news063.html",
-      "pubDate": "Mon, 17 Aug 2026 01:33:24 -0000"
+      "title": "ヒューマノイド開発、「標準インタフェース」が不可欠に",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news061.html",
+      "pubDate": "Fri, 28 Aug 2026 00:30:59 -0000"
     },
     {
-      "title": "日本発のAIチップ新興LENZOも登壇　「Virtual EXPO 2026 夏」開催！",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/18/news092.html",
-      "pubDate": "Tue, 18 Aug 2026 08:15:07 -0000"
+      "title": "パワーエレクトロニクス 最前線",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/powerele/",
+      "pubDate": "Mon, 13 Apr 2026 03:17:56 -0000"
+    },
+    {
+      "title": "AI Everywhere　エッジAIがもたらす革新",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/edgeai/",
+      "pubDate": "Mon, 13 Apr 2026 03:02:56 -0000"
+    },
+    {
+      "title": "半導体後工程",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/backend/index.html",
+      "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
     },
     {
       "title": "富士フイルム、大分工場のポストCMPクリーナー生産力を3倍に",
@@ -62,31 +107,6 @@
       "pubDate": "Wed, 26 Aug 2026 08:10:56 -0000"
     },
     {
-      "title": "パワーエレクトロニクス 最前線",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/powerele/",
-      "pubDate": "Mon, 13 Apr 2026 03:17:56 -0000"
-    },
-    {
-      "title": "AI Everywhere　エッジAIがもたらす革新",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/edgeai/",
-      "pubDate": "Mon, 13 Apr 2026 03:02:56 -0000"
-    },
-    {
-      "title": "半導体後工程",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/backend/index.html",
-      "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
-    },
-    {
-      "title": "Ankerも新規参入、イヤフォンは「AI文字起こし搭載」が当たり前になる？",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news079.html",
-      "pubDate": "Wed, 26 Aug 2026 02:50:52 -0000"
-    },
-    {
-      "title": "25年のイメージセンサー市場は過去最高、ソニーはシェア5割",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news049.html",
-      "pubDate": "Wed, 26 Aug 2026 08:10:56 -0000"
-    },
-    {
       "title": "26年の半導体市場は1.6兆ドルに　メモリが54％占める",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news037.html",
       "pubDate": "Wed, 26 Aug 2026 03:35:52 -0000"
@@ -105,26 +125,6 @@
       "title": "中国YMTCがIPOへ　AI需要で変わるNAND戦略",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news059.html",
       "pubDate": "Tue, 25 Aug 2026 07:29:10 -0000"
-    },
-    {
-      "title": "多様な物体を把持できるロボットハンド開発、金沢大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news029.html",
-      "pubDate": "Tue, 25 Aug 2026 07:14:10 -0000"
-    },
-    {
-      "title": "水や体液に強い厚さ約200nmの透明導電膜を開発、理研ら",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/25/news028.html",
-      "pubDate": "Tue, 25 Aug 2026 06:59:10 -0000"
-    },
-    {
-      "title": "JDIが鳥取工場の売却を完了　譲渡益5億円見込み",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news099.html",
-      "pubDate": "Tue, 25 Aug 2026 06:44:10 -0000"
-    },
-    {
-      "title": "量子センシングの社会実装推進　東陽テクニカら共同研究",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news027.html",
-      "pubDate": "Mon, 24 Aug 2026 12:35:28 -0000"
     }
   ]
 }
