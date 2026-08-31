@@ -1,10 +1,35 @@
 {
-  "updated": "2026-08-31T09:07:12.985013+00:00",
+  "updated": "2026-08-31T10:07:12.178056+00:00",
   "items": [
+    {
+      "title": "バッテリー無しで半永久的に作動するセンサー、大阪大ら",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/31/news032.html",
+      "pubDate": "Mon, 31 Aug 2026 10:07:11 -0000"
+    },
+    {
+      "title": "コモンズの悲劇とカタコト英語から考える「世界を少しだけマシにするもの」",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news020.html",
+      "pubDate": "Mon, 31 Aug 2026 09:52:11 -0000"
+    },
     {
       "title": "半導体高度化で出番が増える 京セラの装置用セラミックス",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/31/news049.html",
       "pubDate": "Mon, 31 Aug 2026 03:07:15 -0000"
+    },
+    {
+      "title": "日本発のAIチップ新興LENZOも登壇　「Virtual EXPO 2026 夏」開催！",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/18/news092.html",
+      "pubDate": "Tue, 18 Aug 2026 08:15:07 -0000"
+    },
+    {
+      "title": "「餅は餅屋」だった　デジカメ新調に走った理由",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/31/news065.html",
+      "pubDate": "Mon, 31 Aug 2026 09:37:11 -0000"
+    },
+    {
+      "title": "2026年上半期の半導体業界を振り返る",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/31/news001.html",
+      "pubDate": "Mon, 31 Aug 2026 02:22:15 -0000"
     },
     {
       "title": "AIを活用し目的に応じた電源回路を設計、千葉大ら",
@@ -17,14 +42,39 @@
       "pubDate": "Mon, 31 Aug 2026 02:37:15 -0000"
     },
     {
-      "title": "日本発のAIチップ新興LENZOも登壇　「Virtual EXPO 2026 夏」開催！",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/18/news092.html",
-      "pubDate": "Tue, 18 Aug 2026 08:15:07 -0000"
+      "title": "Infineon、AI向け電源IC企業C2iを買収　垂直給電を強化",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news082.html",
+      "pubDate": "Fri, 28 Aug 2026 21:54:47 -0000"
     },
     {
-      "title": "2026年上半期の半導体業界を振り返る",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/31/news001.html",
-      "pubDate": "Mon, 31 Aug 2026 02:22:15 -0000"
+      "title": "V2X対応のワイヤレスエミュレーター開発、京都大",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news051.html",
+      "pubDate": "Fri, 28 Aug 2026 21:39:47 -0000"
+    },
+    {
+      "title": "次世代のコンピューティングを支える光伝送と光電融合",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news044.html",
+      "pubDate": "Fri, 28 Aug 2026 21:24:47 -0000"
+    },
+    {
+      "title": "リチウムイオン電池の長寿命化へ新たな材料設計指針",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news050.html",
+      "pubDate": "Fri, 28 Aug 2026 21:09:47 -0000"
+    },
+    {
+      "title": "パワーエレクトロニクス 最前線",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/powerele/",
+      "pubDate": "Mon, 13 Apr 2026 03:17:56 -0000"
+    },
+    {
+      "title": "AI Everywhere　エッジAIがもたらす革新",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/edgeai/",
+      "pubDate": "Mon, 13 Apr 2026 03:02:56 -0000"
+    },
+    {
+      "title": "半導体後工程",
+      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/backend/index.html",
+      "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
     },
     {
       "title": "Infineon、AI向け電源IC企業C2iを買収　垂直給電を強化",
@@ -62,36 +112,6 @@
       "pubDate": "Fri, 28 Aug 2026 01:00:59 -0000"
     },
     {
-      "title": "パワーエレクトロニクス 最前線",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/powerele/",
-      "pubDate": "Mon, 13 Apr 2026 03:17:56 -0000"
-    },
-    {
-      "title": "AI Everywhere　エッジAIがもたらす革新",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/edgeai/",
-      "pubDate": "Mon, 13 Apr 2026 03:02:56 -0000"
-    },
-    {
-      "title": "半導体後工程",
-      "link": "https://eetimes.itmedia.co.jp/ee/subtop/features/backend/index.html",
-      "pubDate": "Mon, 13 Apr 2026 02:47:56 -0000"
-    },
-    {
-      "title": "キオクシアとSandisk、日本に5兆円投資 北上に新棟建設",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news095.html",
-      "pubDate": "Fri, 28 Aug 2026 01:30:59 -0000"
-    },
-    {
-      "title": "TSMCのCoWoSに「弱点」　HBM実装でIntelに商機か",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news066.html",
-      "pubDate": "Fri, 28 Aug 2026 01:15:59 -0000"
-    },
-    {
-      "title": "高効率EUV光発生法で露光装置の消費電力を低減",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news036.html",
-      "pubDate": "Fri, 28 Aug 2026 01:00:59 -0000"
-    },
-    {
       "title": "富士フイルム、大分工場のポストCMPクリーナー生産力を3倍に",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news064.html",
       "pubDate": "Fri, 28 Aug 2026 00:45:59 -0000"
@@ -105,26 +125,6 @@
       "title": "高性能な全固体リチウムイオン電池に道、名古屋大が新成果",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/27/news035.html",
       "pubDate": "Thu, 27 Aug 2026 02:11:47 -0000"
-    },
-    {
-      "title": "酸化還元グラフェン上にグラフェン薄膜を形成、東洋大ら",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news028.html",
-      "pubDate": "Thu, 27 Aug 2026 01:56:47 -0000"
-    },
-    {
-      "title": "Ankerも新規参入、イヤフォンは「AI文字起こし搭載」が当たり前になる？",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/24/news079.html",
-      "pubDate": "Wed, 26 Aug 2026 02:50:52 -0000"
-    },
-    {
-      "title": "25年のイメージセンサー市場は過去最高、ソニーはシェア5割",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news049.html",
-      "pubDate": "Wed, 26 Aug 2026 08:10:56 -0000"
-    },
-    {
-      "title": "26年の半導体市場は1.6兆ドルに　メモリが54％占める",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/26/news037.html",
-      "pubDate": "Wed, 26 Aug 2026 03:35:52 -0000"
     }
   ]
 }
