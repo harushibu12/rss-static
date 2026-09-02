@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T12:17:43.864611+00:00",
+  "updated": "2026-09-02T13:13:36.584694+00:00",
   "items": [
     {
       "title": "非接触で燃料電池を内部診断するモデル開発、筑波大",
@@ -77,6 +77,11 @@
       "pubDate": "Tue, 01 Sep 2026 13:13:18 -0000"
     },
     {
+      "title": "半導体配線界面の化学構造変化を直接可視化、TRCら",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/01/news026.html",
+      "pubDate": "Tue, 01 Sep 2026 06:42:54 -0000"
+    },
+    {
       "title": "世界半導体企業ランキングでキオクシア8位、26年Q2",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/29/news019.html",
       "pubDate": "Tue, 01 Sep 2026 06:27:54 -0000"
@@ -120,11 +125,6 @@
       "title": "Infineon、AI向け電源IC企業C2iを買収　垂直給電を強化",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news082.html",
       "pubDate": "Fri, 28 Aug 2026 21:54:47 -0000"
-    },
-    {
-      "title": "V2X対応のワイヤレスエミュレーター開発、京都大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/28/news051.html",
-      "pubDate": "Fri, 28 Aug 2026 21:39:47 -0000"
     }
   ]
 }
