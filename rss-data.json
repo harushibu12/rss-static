@@ -1,6 +1,11 @@
 {
-  "updated": "2026-09-16T06:17:51.752723+00:00",
+  "updated": "2026-09-16T07:14:28.630232+00:00",
   "items": [
+    {
+      "title": "半導体の「データ移動」を効率化　米IP新興が日本進出",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/16/news046.html",
+      "pubDate": "Wed, 16 Sep 2026 15:30:00 +0900"
+    },
     {
       "title": "結晶方位を利用した次世代スピントロニクスデバイスへ新成果",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/16/news034.html",
@@ -95,11 +100,6 @@
       "title": "時速350kmのレースで「水平」維持、ソニー スタビライザーLSI",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/11/news054.html",
       "pubDate": "Fri, 11 Sep 2026 10:30:00 +0900"
-    },
-    {
-      "title": "磁気相転移を活用　次世代磁気メモリで新機能発現へ",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/11/news031.html",
-      "pubDate": "Fri, 11 Sep 2026 09:30:00 +0900"
     }
   ]
 }
