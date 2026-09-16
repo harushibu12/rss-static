@@ -1,5 +1,6 @@
 import json
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
@@ -22,14 +23,36 @@ def fetch_rss():
         }
     )
 
-    with urllib.request.urlopen(req, timeout=30) as response:
-        return response.read()
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            return response.read()
+
+    except urllib.error.HTTPError as e:
+        print(f"RSS取得失敗: HTTP {e.code}")
+        return None
+
+    except urllib.error.URLError as e:
+        print(f"RSS取得失敗: {e.reason}")
+        return None
+
+    except TimeoutError:
+        print("RSS取得失敗: タイムアウト")
+        return None
+
+    except Exception as e:
+        print(f"RSS取得失敗: {e}")
+        return None
 
 
 # ===== RSS解析 =====
 
 def parse_rss(xml_data):
-    root = ET.fromstring(xml_data)
+    try:
+        root = ET.fromstring(xml_data)
+
+    except ET.ParseError as e:
+        print(f"RSS解析失敗: {e}")
+        return []
 
     items = []
 
@@ -55,40 +78,91 @@ def parse_rss(xml_data):
 def main():
 
     print("RSS取得開始")
+    print("URL:", RSS_URL)
 
     xml_data = fetch_rss()
 
+    # ===== RSS取得失敗 =====
+    # 既存のrss-data.jsonには一切触れない
+
+    if xml_data is None:
+        print("RSS取得失敗")
+        print("前回正常な rss-data.json を維持します。")
+        return
+
     print("RSS取得完了")
+
+    # ===== RSS解析 =====
 
     items = parse_rss(xml_data)
 
     print("取得記事数:", len(items))
 
-    # 念のため新しい順に並べる
+    # 記事0件の場合も異常とみなし、
+    # 既存データを維持する
+
+    if len(items) == 0:
+        print("記事が0件です。")
+        print("前回正常な rss-data.json を維持します。")
+        return
+
+    # ===== 新しい順に並べる =====
+
     items.sort(
         key=lambda x: x.get("pubDate", ""),
         reverse=True
     )
 
-    # 最大件数
+    # ===== 最大件数 =====
+
     items = items[:MAX_ITEMS]
+
+    # ===== 新しいJSON =====
 
     data = {
         "updated": datetime.now(timezone.utc).isoformat(),
         "items": items
     }
 
-    with open(
-        OUTPUT,
-        "w",
-        encoding="utf-8"
-    ) as f:
-        json.dump(
-            data,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+    # ===== 一時ファイルに保存 =====
+    # 保存途中で異常が起きても本体は壊さない
+
+    TEMP_OUTPUT = OUTPUT + ".tmp"
+
+    try:
+
+        with open(
+            TEMP_OUTPUT,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                data,
+                f,
+                ensure_ascii=False,
+                indent=2
+            )
+
+        # 正常に書き込みできた場合だけ
+        # rss-data.jsonを置き換える
+
+        import os
+        os.replace(TEMP_OUTPUT, OUTPUT)
+
+    except Exception as e:
+
+        print(f"JSON保存失敗: {e}")
+        print("前回正常な rss-data.json を維持します。")
+
+        try:
+            import os
+            if os.path.exists(TEMP_OUTPUT):
+                os.remove(TEMP_OUTPUT)
+        except Exception:
+            pass
+
+        return
 
     print("JSON更新完了")
     print("保存記事数:", len(items))
