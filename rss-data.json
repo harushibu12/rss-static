@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T11:13:03.739291+00:00",
+  "updated": "2026-09-17T12:17:14.079125+00:00",
   "items": [
     {
       "title": "半導体の「データ移動」を効率化　米IP新興が日本進出",
@@ -57,6 +57,11 @@
       "pubDate": "Tue, 15 Sep 2026 09:30:00 +0900"
     },
     {
+      "title": "ロームのSiCパワー半導体、BMWがEVに採用",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news100.html",
+      "pubDate": "Thu, 17 Sep 2026 20:30:00 +0900"
+    },
+    {
       "title": "シャープが国内向けにAIサーバ展開 NVIDIA製GPU搭載",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/16/news091.html",
       "pubDate": "Thu, 17 Sep 2026 15:30:00 +0900"
@@ -95,11 +100,6 @@
       "title": "フィジカルAI開発の「共通言語」策定へ Armの最新AI戦略",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news077.html",
       "pubDate": "Mon, 14 Sep 2026 16:00:00 +0900"
-    },
-    {
-      "title": "サブテラヘルツ帯で「世界最速」2Tビット/秒、100m伝送を実証",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news045.html",
-      "pubDate": "Mon, 14 Sep 2026 15:30:00 +0900"
     }
   ]
 }
