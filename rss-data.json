@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T04:14:07.023220+00:00",
+  "updated": "2026-09-17T05:13:17.191292+00:00",
   "items": [
     {
       "title": "半導体の「データ移動」を効率化　米IP新興が日本進出",
@@ -57,6 +57,11 @@
       "pubDate": "Tue, 15 Sep 2026 09:30:00 +0900"
     },
     {
+      "title": "プラズマ処理なしで300mmウエハーを直接接合、横浜国立大ら",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news036.html",
+      "pubDate": "Thu, 17 Sep 2026 13:30:00 +0900"
+    },
+    {
       "title": "AI時代の半導体製造、ウェット装置への要求は　Lam幹部に聞く",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news017.html",
       "pubDate": "Thu, 17 Sep 2026 11:00:00 +0900"
@@ -95,11 +100,6 @@
       "title": "AIが次に学ぶのは「何気ない動作」　先生になる私たち",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news066.html",
       "pubDate": "Mon, 14 Sep 2026 12:30:00 +0900"
-    },
-    {
-      "title": "京セラと東北大、シリコン光回路に光アイソレーターを直接集積",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news030.html",
-      "pubDate": "Mon, 14 Sep 2026 10:30:00 +0900"
     }
   ]
 }
