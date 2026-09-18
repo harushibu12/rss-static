@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T06:17:08.748105+00:00",
+  "updated": "2026-09-18T07:13:39.037109+00:00",
   "items": [
     {
       "title": "半導体の「データ移動」を効率化　米IP新興が日本進出",
@@ -35,11 +35,6 @@
       "title": "コウモリ模擬のドローン、障害物を回避し自律飛行",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/15/news044.html",
       "pubDate": "Tue, 15 Sep 2026 13:30:00 +0900"
-    },
-    {
-      "title": "製造現場にフィジカルAIをどう実装するか――電子版2026年9月号",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/15/news030.html",
-      "pubDate": "Tue, 15 Sep 2026 12:30:00 +0900"
     },
     {
       "title": "ロームのSiCパワー半導体、BMWがEVに採用",
@@ -80,6 +75,11 @@
       "title": "「Spansion」復活へ、WinbondがInfineonのNORフラッシュ事業買収",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news050.html",
       "pubDate": "Thu, 17 Sep 2026 08:20:00 +0900"
+    },
+    {
+      "title": "量子チップを商用300mmラインで製造、基本3動作実証",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news057.html",
+      "pubDate": "Fri, 18 Sep 2026 15:30:00 +0900"
     },
     {
       "title": "超伝導SCSCケーブルと巻き線技術を開発、京都大",
