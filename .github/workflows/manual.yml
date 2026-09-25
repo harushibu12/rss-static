@@ -2,10 +2,13 @@ name: RSS更新
 
 on:
   schedule:
+    # 毎時17分（日本時間）
     - cron: '17 * * * *'
+
+  # 手動実行
   workflow_dispatch:
 
-# RSS更新のActionsが同時に走るのを防ぐ
+# RSS更新Actionsが同時に走るのを防ぐ
 concurrency:
   group: rss-update
   cancel-in-progress: false
@@ -27,7 +30,8 @@ jobs:
 
       # ===== RSS取得・JSON更新 =====
       - name: Pythonを実行
-        run: python update.py
+        run: |
+          python update.py
 
       # ===== JSONをコミット・Push =====
       - name: JSONをコミット
@@ -35,20 +39,29 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # 今回生成したRSS JSONを一時保存
+          cp rss-data.json /tmp/rss-data.json
+
+          # GitHub側の最新mainを取得
+          git fetch origin main
+
+          # GitHub側の最新mainに完全に合わせる
+          git reset --hard origin/main
+
+          # 今回生成したRSS JSONを戻す
+          cp /tmp/rss-data.json rss-data.json
+
+          # RSS JSONだけをコミット
           git add rss-data.json
 
+          # 変更がなければ終了
           if git diff --cached --quiet; then
             echo "変更なし。コミットしません。"
             exit 0
           fi
 
+          # コミット
           git commit -m "RSSを更新"
 
-          # GitHub側の最新状態を取得
-          git fetch origin main
-
-          # 最新のmainを取り込む
-          git rebase origin/main
-
-          # 最新状態をPush
-          git push origin main
+          # 最新のmainへPush
+          git push origin HEAD:main
