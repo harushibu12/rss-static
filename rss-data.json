@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:53:28.304321+00:00",
+  "updated": "2026-09-25T15:13:55.494592+00:00",
   "items": [
     {
       "title": "富士フイルム、インドに初の半導体材料工場建設へ",
@@ -35,6 +35,11 @@
       "title": "SiCの開発と実装が進む 300mm化から次世代EV採用まで",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/19/news013.html",
       "pubDate": "Sat, 19 Sep 2026 10:30:00 +0900"
+    },
+    {
+      "title": "三菱電機、NVIDIA対応AIデータセンターの電力／冷却を丸ごと設計",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news115.html",
+      "pubDate": "Fri, 25 Sep 2026 20:20:00 +0900"
     },
     {
       "title": "ハフニウムの国内製造技術を確立、第一稀元素化学工業",
@@ -95,11 +100,6 @@
       "title": "半導体設計を2週間で　20歳CEOの米新興がAIで挑む",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news048.html",
       "pubDate": "Fri, 18 Sep 2026 10:30:00 +0900"
-    },
-    {
-      "title": "三菱電機が量子技術の産業応用加速へ　OptQCに出資",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news037.html",
-      "pubDate": "Fri, 18 Sep 2026 09:30:00 +0900"
     }
   ]
 }
