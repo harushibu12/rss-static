@@ -98,8 +98,20 @@ def main():
 
     print("取得記事数:", len(items))
 
-    # 記事0件の場合も異常とみなし、
-    # 既存データを維持する
+    # ===== 取得した記事を確認 =====
+    # GitHub Actionsのログに全記事を表示
+
+    print("===== 取得した記事一覧 =====")
+
+    for i, item in enumerate(items, 1):
+        print(
+            f"{i}. {item['pubDate']} | {item['title']}"
+        )
+
+    print("==========================")
+
+    # ===== 記事0件の場合 =====
+    # 異常とみなし、既存データを維持する
 
     if len(items) == 0:
         print("記事が0件です。")
