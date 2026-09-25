@@ -2,7 +2,7 @@ name: RSS更新
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 # RSS更新のActionsが同時に走るのを防ぐ
