@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T00:42:17.774825+00:00",
+  "updated": "2026-09-28T06:50:06.447626+00:00",
   "items": [
     {
       "title": "富士フイルム、インドに初の半導体材料工場建設へ",
@@ -22,19 +22,39 @@
       "pubDate": "Thu, 24 Sep 2026 13:30:00 +0900"
     },
     {
-      "title": "次の指令はメガネが教えてくれる 製造現場でAIスマートグラス活用",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/24/news052.html",
-      "pubDate": "Thu, 24 Sep 2026 12:15:00 +0900"
+      "title": "「世界初」新たなトレンチ型ダイヤモンドMOSFETの動作実証",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news042.html",
+      "pubDate": "Mon, 28 Sep 2026 13:30:00 +0900"
     },
     {
-      "title": "圧力をかけると明るく光り発光色も変わる結晶、大阪大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/24/news022.html",
-      "pubDate": "Thu, 24 Sep 2026 09:30:00 +0900"
+      "title": "M＆Aで消えた「Spansion」、まさかの復活へ",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news074.html",
+      "pubDate": "Mon, 28 Sep 2026 12:30:00 +0900"
     },
     {
-      "title": "SiCの開発と実装が進む 300mm化から次世代EV採用まで",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/19/news013.html",
-      "pubDate": "Sat, 19 Sep 2026 10:30:00 +0900"
+      "title": "住友化学が屈折率1.06の透明薄膜形成材料 イメージセンサーなどに",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news057.html",
+      "pubDate": "Mon, 28 Sep 2026 12:00:00 +0900"
+    },
+    {
+      "title": "2nm世代採用 「iPhone 18 Pro」分解で見える7000日の進化の歩み",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news069.html",
+      "pubDate": "Mon, 28 Sep 2026 11:30:00 +0900"
+    },
+    {
+      "title": "商社×メーカーの2つの顔　TED新社長が語る半導体市場と成長戦略",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news051.html",
+      "pubDate": "Mon, 28 Sep 2026 11:00:00 +0900"
+    },
+    {
+      "title": "400Gbps光通信を実証、imecが5V動作の超高速APD",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news050.html",
+      "pubDate": "Mon, 28 Sep 2026 10:30:00 +0900"
+    },
+    {
+      "title": "5倍伸ばしても壊れず、蒸れない導電フィルム",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news040.html",
+      "pubDate": "Mon, 28 Sep 2026 09:30:00 +0900"
     },
     {
       "title": "三菱電機、NVIDIA対応AIデータセンターの電力／冷却を丸ごと設計",
@@ -80,26 +100,6 @@
       "title": "三菱ケミカル、次世代光通信向け材料新興に出資",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news043.html",
       "pubDate": "Fri, 25 Sep 2026 09:30:00 +0900"
-    },
-    {
-      "title": "量子チップを商用300mmラインで製造、基本3動作実証",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news057.html",
-      "pubDate": "Fri, 18 Sep 2026 15:30:00 +0900"
-    },
-    {
-      "title": "超伝導SCSCケーブルと巻き線技術を開発、京都大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news038.html",
-      "pubDate": "Fri, 18 Sep 2026 13:30:00 +0900"
-    },
-    {
-      "title": "半導体誘致で対照的な日韓、共通する「官」「民」のズレ",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news051.html",
-      "pubDate": "Fri, 18 Sep 2026 11:00:00 +0900"
-    },
-    {
-      "title": "半導体設計を2週間で　20歳CEOの米新興がAIで挑む",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news048.html",
-      "pubDate": "Fri, 18 Sep 2026 10:30:00 +0900"
     }
   ]
 }
