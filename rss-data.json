@@ -1,6 +1,46 @@
 {
-  "updated": "2026-09-29T01:54:30.702239+00:00",
+  "updated": "2026-09-29T08:25:37.242296+00:00",
   "items": [
+    {
+      "title": "Navitasが1万V級SiC IGBT開発へ　米陸軍が選定",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news089.html",
+      "pubDate": "Tue, 29 Sep 2026 16:30:00 +0900"
+    },
+    {
+      "title": "Ericsson、次世代通信で村田製作所／住友電工と協業",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news076.html",
+      "pubDate": "Tue, 29 Sep 2026 16:00:00 +0900"
+    },
+    {
+      "title": "政治とメモリ供給難に翻ろうされるSKとIntel",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news086.html",
+      "pubDate": "Tue, 29 Sep 2026 15:00:00 +0900"
+    },
+    {
+      "title": "ナノポーラスβ-SiCを低い温度で作製、東北大",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news040.html",
+      "pubDate": "Tue, 29 Sep 2026 13:30:00 +0900"
+    },
+    {
+      "title": "SiC特有の「データシートに載らない劣化」を測定、OKI",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news073.html",
+      "pubDate": "Tue, 29 Sep 2026 13:30:00 +0900"
+    },
+    {
+      "title": "パナソニック、神戸港でガラス型ペロブスカイト太陽電池を運用",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news062.html",
+      "pubDate": "Tue, 29 Sep 2026 12:30:00 +0900"
+    },
+    {
+      "title": "「iPhone 18 Pro」のイメージセンサー、3眼全てソニー製",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news067.html",
+      "pubDate": "Tue, 29 Sep 2026 11:00:00 +0900"
+    },
+    {
+      "title": "「自律化しすぎない」が軸　AIはテストをどこまで担うか",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news113.html",
+      "pubDate": "Tue, 29 Sep 2026 10:30:00 +0900"
+    },
     {
       "title": "onsemiがバレンズと協業、MIPI A-PHY準拠の統合センサー開発",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news039.html",
@@ -60,46 +100,6 @@
       "title": "5倍伸ばしても壊れず、蒸れない導電フィルム",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news040.html",
       "pubDate": "Mon, 28 Sep 2026 09:30:00 +0900"
-    },
-    {
-      "title": "三菱電機、NVIDIA対応AIデータセンターの電力／冷却を丸ごと設計",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news115.html",
-      "pubDate": "Fri, 25 Sep 2026 20:20:00 +0900"
-    },
-    {
-      "title": "ハフニウムの国内製造技術を確立、第一稀元素化学工業",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news044.html",
-      "pubDate": "Fri, 25 Sep 2026 15:30:00 +0900"
-    },
-    {
-      "title": "中国のDRAM大手CXMT、NANDフラッシュに参入か",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news060.html",
-      "pubDate": "Fri, 25 Sep 2026 13:30:00 +0900"
-    },
-    {
-      "title": "日本の技術力を結集！ Teslaより70％軽いインバーター",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news061.html",
-      "pubDate": "Fri, 25 Sep 2026 12:30:00 +0900"
-    },
-    {
-      "title": "日本は「課題先進国」だけど「導入後進国」なのか",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news080.html",
-      "pubDate": "Fri, 25 Sep 2026 12:00:00 +0900"
-    },
-    {
-      "title": "26年Q2の半導体世界ランキングから読み取る「本当の勝者」",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news025.html",
-      "pubDate": "Fri, 25 Sep 2026 11:00:00 +0900"
-    },
-    {
-      "title": "量子コンピュータと量子暗号（後編）",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news030.html",
-      "pubDate": "Fri, 25 Sep 2026 10:30:00 +0900"
-    },
-    {
-      "title": "住友金属鉱山、「世界初」300mm貼り合わせSiC基板開発",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
-      "pubDate": "Fri, 25 Sep 2026 10:00:00 +0900"
     }
   ]
 }
