@@ -1,6 +1,11 @@
 {
-  "updated": "2026-09-28T21:57:43.876062+00:00",
+  "updated": "2026-09-29T01:54:30.702239+00:00",
   "items": [
+    {
+      "title": "onsemiがバレンズと協業、MIPI A-PHY準拠の統合センサー開発",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news039.html",
+      "pubDate": "Tue, 29 Sep 2026 09:30:00 +0900"
+    },
     {
       "title": "NXPとVISの合弁VSMC、シンガポール300mm新工場を開所",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news108.html",
@@ -95,11 +100,6 @@
       "title": "住友金属鉱山、「世界初」300mm貼り合わせSiC基板開発",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
       "pubDate": "Fri, 25 Sep 2026 10:00:00 +0900"
-    },
-    {
-      "title": "三菱ケミカル、次世代光通信向け材料新興に出資",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news043.html",
-      "pubDate": "Fri, 25 Sep 2026 09:30:00 +0900"
     }
   ]
 }
