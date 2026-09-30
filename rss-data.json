@@ -1,6 +1,21 @@
 {
-  "updated": "2026-09-30T06:40:19.975535+00:00",
+  "updated": "2026-09-30T13:39:30.135311+00:00",
   "items": [
+    {
+      "title": "ニデック、最終赤字5646億円　監査法人は「意見不表明」",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news111.html",
+      "pubDate": "Wed, 30 Sep 2026 20:26:00 +0900"
+    },
+    {
+      "title": "JDI茂原工場、新光電気が取得　先端半導体パッケージ工場に",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news105.html",
+      "pubDate": "Wed, 30 Sep 2026 16:55:00 +0900"
+    },
+    {
+      "title": "「水だけで」SiCウエハー端面研磨 ダイヤ砥粒入りパッド",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news098.html",
+      "pubDate": "Wed, 30 Sep 2026 15:30:00 +0900"
+    },
     {
       "title": "飛行中ドローンから高解像度ライブ映像伝送、京大",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news043.html",
@@ -85,21 +100,6 @@
       "title": "パナソニック、神戸港でガラス型ペロブスカイト太陽電池を運用",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news062.html",
       "pubDate": "Tue, 29 Sep 2026 12:30:00 +0900"
-    },
-    {
-      "title": "「iPhone 18 Pro」のイメージセンサー、3眼全てソニー製",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news067.html",
-      "pubDate": "Tue, 29 Sep 2026 11:00:00 +0900"
-    },
-    {
-      "title": "「自律化しすぎない」が軸　AIはテストをどこまで担うか",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news113.html",
-      "pubDate": "Tue, 29 Sep 2026 10:30:00 +0900"
-    },
-    {
-      "title": "onsemiがバレンズと協業、MIPI A-PHY準拠の統合センサー開発",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news039.html",
-      "pubDate": "Tue, 29 Sep 2026 09:30:00 +0900"
     }
   ]
 }
