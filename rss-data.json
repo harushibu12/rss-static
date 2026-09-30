@@ -1,6 +1,51 @@
 {
-  "updated": "2026-09-30T00:24:41.239430+00:00",
+  "updated": "2026-09-30T06:40:19.975535+00:00",
   "items": [
+    {
+      "title": "飛行中ドローンから高解像度ライブ映像伝送、京大",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news043.html",
+      "pubDate": "Wed, 30 Sep 2026 14:30:00 +0900"
+    },
+    {
+      "title": "TSMC「A14」設計にエージェントAI、Synopsysと協業",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news059.html",
+      "pubDate": "Wed, 30 Sep 2026 13:30:00 +0900"
+    },
+    {
+      "title": "複合機のVCSEL技術で空間センシング開発、富士フイルム",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news063.html",
+      "pubDate": "Wed, 30 Sep 2026 12:30:00 +0900"
+    },
+    {
+      "title": "HBM価格は2027年に2.2倍へ　供給不足続く",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news066.html",
+      "pubDate": "Wed, 30 Sep 2026 11:30:00 +0900"
+    },
+    {
+      "title": "Huawei「タウスケーリング」用いたプロセッサが市場へ",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news074.html",
+      "pubDate": "Wed, 30 Sep 2026 11:00:00 +0900"
+    },
+    {
+      "title": "SiC IC実用化へ前進！ 6インチ全面でJFET作製、京大",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news040.html",
+      "pubDate": "Wed, 30 Sep 2026 10:30:00 +0900"
+    },
+    {
+      "title": "TOPPANとBroadcom合弁、シンガポールFC-BGA基板工場",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news065.html",
+      "pubDate": "Wed, 30 Sep 2026 10:00:00 +0900"
+    },
+    {
+      "title": "村田製作所がVRグローブ新興と協業 AI時代の入力機器に商機",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news042.html",
+      "pubDate": "Wed, 30 Sep 2026 09:30:00 +0900"
+    },
+    {
+      "title": "蛍光イメージングとMRIで使える新イメージング材料",
+      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news041.html",
+      "pubDate": "Wed, 30 Sep 2026 09:00:00 +0900"
+    },
     {
       "title": "ニデック岸田社長が辞任　財務報告で「適切とは言いかねる言動」",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news096.html",
@@ -55,51 +100,6 @@
       "title": "onsemiがバレンズと協業、MIPI A-PHY準拠の統合センサー開発",
       "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news039.html",
       "pubDate": "Tue, 29 Sep 2026 09:30:00 +0900"
-    },
-    {
-      "title": "NXPとVISの合弁VSMC、シンガポール300mm新工場を開所",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news108.html",
-      "pubDate": "Mon, 28 Sep 2026 18:52:00 +0900"
-    },
-    {
-      "title": "SAIMEMORYと新光電気が協業　ZAM商用化見据え",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news106.html",
-      "pubDate": "Mon, 28 Sep 2026 17:40:00 +0900"
-    },
-    {
-      "title": "ニデックが「岸田社長の解任決議」報道にコメント",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news102.html",
-      "pubDate": "Mon, 28 Sep 2026 15:40:00 +0900"
-    },
-    {
-      "title": "島津ら研究／分析装置メーカー6社が集結 京大と技術開発",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news077.html",
-      "pubDate": "Mon, 28 Sep 2026 15:30:00 +0900"
-    },
-    {
-      "title": "「世界初」新たなトレンチ型ダイヤモンドMOSFETの動作実証",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news042.html",
-      "pubDate": "Mon, 28 Sep 2026 13:30:00 +0900"
-    },
-    {
-      "title": "M＆Aで消えた「Spansion」、まさかの復活へ",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news074.html",
-      "pubDate": "Mon, 28 Sep 2026 12:30:00 +0900"
-    },
-    {
-      "title": "住友化学が屈折率1.06の透明薄膜形成材料 イメージセンサーなどに",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news057.html",
-      "pubDate": "Mon, 28 Sep 2026 12:00:00 +0900"
-    },
-    {
-      "title": "2nm世代採用 「iPhone 18 Pro」分解で見える7000日の進化の歩み",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news069.html",
-      "pubDate": "Mon, 28 Sep 2026 11:30:00 +0900"
-    },
-    {
-      "title": "商社×メーカーの2つの顔　TED新社長が語る半導体市場と成長戦略",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news051.html",
-      "pubDate": "Mon, 28 Sep 2026 11:00:00 +0900"
     }
   ]
 }
