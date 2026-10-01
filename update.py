@@ -28,47 +28,134 @@ ARTICLE_PATTERN = re.compile(
 )
 
 
-class LinkParser(HTMLParser):
+class SectionLinkParser(HTMLParser):
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
+
         self.current_href = None
         self.current_text = []
+
         self.links = []
+
+        self.current_heading = None
+        self.heading_text = []
+
+        self.in_target_section = False
+        self.target_section_count = 0
 
     def handle_starttag(self, tag, attrs):
 
-        if tag.lower() != "a":
+        tag = tag.lower()
+        attrs = dict(attrs)
+
+        # 見出し開始
+        if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
+
+            self.current_heading = tag
+            self.heading_text = []
+
             return
 
-        attrs = dict(attrs)
-        href = attrs.get("href")
+        # リンク開始
+        if tag == "a":
 
-        if href:
-            self.current_href = href
-            self.current_text = []
+            href = attrs.get("href")
+
+            if href:
+
+                self.current_href = href
+                self.current_text = []
 
     def handle_data(self, data):
 
+        if self.current_heading is not None:
+
+            self.heading_text.append(data)
+
         if self.current_href is not None:
+
             self.current_text.append(data)
 
     def handle_endtag(self, tag):
 
-        if tag.lower() != "a":
-            return
+        tag = tag.lower()
 
-        if self.current_href is not None:
+        # 見出し終了
+        if self.current_heading == tag:
 
-            text = " ".join(self.current_text)
-            text = re.sub(r"\s+", " ", text).strip()
-
-            self.links.append(
-                (self.current_href, text)
+            heading = " ".join(
+                self.heading_text
             )
 
-        self.current_href = None
-        self.current_text = []
+            heading = re.sub(
+                r"\s+",
+                " ",
+                heading
+            ).strip()
+
+            if heading == "Top Stories":
+
+                self.in_target_section = True
+                self.target_section_count += 1
+
+                print(
+                    "対象エリア開始: Top Stories"
+                )
+
+            elif heading == "新着記事":
+
+                self.in_target_section = True
+                self.target_section_count += 1
+
+                print(
+                    "対象エリア開始: 新着記事"
+                )
+
+            elif self.in_target_section:
+
+                # Top Stories / 新着記事の次の
+                # 大見出しに到達したら終了
+                if tag in ("h1", "h2"):
+
+                    self.in_target_section = False
+
+                    print(
+                        "対象エリア終了:",
+                        heading
+                    )
+
+            self.current_heading = None
+            self.heading_text = []
+
+            return
+
+        # リンク終了
+        if tag == "a":
+
+            if self.current_href is not None:
+
+                text = " ".join(
+                    self.current_text
+                )
+
+                text = re.sub(
+                    r"\s+",
+                    " ",
+                    text
+                ).strip()
+
+                if self.in_target_section:
+
+                    self.links.append(
+                        (
+                            self.current_href,
+                            text
+                        )
+                    )
+
+            self.current_href = None
+            self.current_text = []
 
 
 def normalize_url(url):
@@ -79,13 +166,22 @@ def normalize_url(url):
     url = url.strip()
 
     if url.startswith("//"):
+
         url = "https:" + url
 
     elif url.startswith("/"):
-        url = urljoin(BASE_URL, url)
+
+        url = urljoin(
+            BASE_URL,
+            url
+        )
 
     elif not url.startswith("http"):
-        url = urljoin(BASE_URL + "/", url)
+
+        url = urljoin(
+            BASE_URL + "/",
+            url
+        )
 
     return url.split("#")[0]
 
@@ -95,10 +191,14 @@ def is_article_url(url):
     if not url:
         return False
 
-    if not url.startswith(BASE_URL + "/ee/"):
+    if not url.startswith(
+        BASE_URL + "/ee/"
+    ):
         return False
 
-    return ARTICLE_PATTERN.search(url) is not None
+    return ARTICLE_PATTERN.search(
+        url
+    ) is not None
 
 
 def date_from_url(url):
@@ -140,6 +240,7 @@ def detect_charset(data, content_type):
         )
 
         if match:
+
             return match.group(1).strip()
 
     head = data[:10000]
@@ -184,7 +285,10 @@ def decode_html(data, content_type):
     candidates = []
 
     if charset:
-        candidates.append(charset)
+
+        candidates.append(
+            charset
+        )
 
     candidates.extend([
         "utf-8",
@@ -273,7 +377,8 @@ def fetch_url(url):
                 "application/xml;q=0.9,"
                 "*/*;q=0.8"
             ),
-            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8"
+            "Accept-Language":
+                "ja,en-US;q=0.9,en;q=0.8"
         }
     )
 
@@ -372,26 +477,37 @@ def extract_article_info(
 
     if not html:
 
-        fallback_date = date_from_url(url)
+        fallback_date = date_from_url(
+            url
+        )
 
         if not fallback_title:
             return None
 
         return {
-            "title": clean_title(fallback_title),
-            "link": url,
-            "pubDate": (
-                fallback_date.strftime(
-                    "%a, %d %b %Y 00:00:00 +0900"
+            "title":
+                clean_title(
+                    fallback_title
+                ),
+
+            "link":
+                url,
+
+            "pubDate":
+                (
+                    fallback_date.strftime(
+                        "%a, %d %b %Y 00:00:00 +0900"
+                    )
+                    if fallback_date
+                    else ""
+                ),
+
+            "_date":
+                (
+                    fallback_date.isoformat()
+                    if fallback_date
+                    else ""
                 )
-                if fallback_date
-                else ""
-            ),
-            "_date": (
-                fallback_date.isoformat()
-                if fallback_date
-                else ""
-            )
         }
 
     title = None
@@ -416,6 +532,7 @@ def extract_article_info(
         if match:
 
             title = match.group(1).strip()
+
             break
 
     if not title:
@@ -431,14 +548,19 @@ def extract_article_info(
             title = match.group(1).strip()
 
     if not title:
+
         title = fallback_title
 
-    title = clean_title(title)
+    title = clean_title(
+        title
+    )
 
     if not title:
         return None
 
-    article_date = date_from_url(url)
+    article_date = date_from_url(
+        url
+    )
 
     if article_date:
 
@@ -454,21 +576,41 @@ def extract_article_info(
         sort_date = ""
 
     return {
-        "title": title,
-        "link": url,
-        "pubDate": pub_date,
-        "_date": sort_date
+        "title":
+            title,
+
+        "link":
+            url,
+
+        "pubDate":
+            pub_date,
+
+        "_date":
+            sort_date
     }
 
 
 def main():
 
-    print("========================================")
-    print("EE Times Japan 直接取得")
-    print("RSSは使用しません")
-    print("取得元：トップページ")
-    print("Top Stories + 新着記事")
-    print("========================================")
+    print(
+        "========================================"
+    )
+
+    print(
+        "EE Times Japan 直接取得"
+    )
+
+    print(
+        "RSSは使用しません"
+    )
+
+    print(
+        "取得対象：Top Stories + 新着記事"
+    )
+
+    print(
+        "========================================"
+    )
 
     html = fetch_url(
         SOURCE_URL
@@ -486,7 +628,7 @@ def main():
 
         return
 
-    parser = LinkParser()
+    parser = SectionLinkParser()
 
     try:
 
@@ -505,11 +647,60 @@ def main():
 
         return
 
+    print(
+        "========================================"
+    )
+
+    print(
+        "対象エリア数:",
+        parser.target_section_count
+    )
+
+    print(
+        "対象エリア内の記事リンク:",
+        len(parser.links)
+    )
+
+    print(
+        "========================================"
+    )
+
+    if parser.target_section_count == 0:
+
+        print(
+            "Top Stories / 新着記事の"
+            "見出しを検出できませんでした。"
+        )
+
+        print(
+            "サイト構造が変更された可能性があります。"
+        )
+
+        print(
+            "安全のため既存JSONは変更しません。"
+        )
+
+        return
+
+    if not parser.links:
+
+        print(
+            "対象エリアから記事URLを取得できませんでした。"
+        )
+
+        print(
+            "既存JSONは変更しません。"
+        )
+
+        return
+
     candidate_articles = {}
 
     for href, text in parser.links:
 
-        url = normalize_url(href)
+        url = normalize_url(
+            href
+        )
 
         if not is_article_url(url):
             continue
@@ -523,16 +714,13 @@ def main():
             old_text = candidate_articles[url]
 
             if len(text) > len(old_text):
+
                 candidate_articles[url] = text
 
-    print("========================================")
-
     print(
-        "トップページから取得した記事URL:",
+        "対象エリアから取得した記事URL:",
         len(candidate_articles)
     )
-
-    print("========================================")
 
     if not candidate_articles:
 
@@ -552,7 +740,9 @@ def main():
 
     candidates.sort(
         key=lambda item: (
-            date_from_url(item[0])
+            date_from_url(
+                item[0]
+            )
             or datetime(
                 2000,
                 1,
@@ -578,7 +768,9 @@ def main():
         1
     ):
 
-        print("----------------------------------------")
+        print(
+            "----------------------------------------"
+        )
 
         print(
             "記事",
@@ -603,7 +795,10 @@ def main():
         )
 
         if article:
-            articles.append(article)
+
+            articles.append(
+                article
+            )
 
         time.sleep(0.2)
 
@@ -632,12 +827,11 @@ def main():
     )
 
     articles.sort(
-        key=lambda article: (
+        key=lambda article:
             article.get(
                 "_date",
                 ""
-            )
-        ),
+            ),
         reverse=True
     )
 
@@ -645,9 +839,17 @@ def main():
         :MAX_ITEMS
     ]
 
-    print("========================================")
-    print("最終保存記事一覧")
-    print("========================================")
+    print(
+        "========================================"
+    )
+
+    print(
+        "最終保存記事一覧"
+    )
+
+    print(
+        "========================================"
+    )
 
     for index, article in enumerate(
         articles,
@@ -667,7 +869,9 @@ def main():
             article["link"]
         )
 
-    print("========================================")
+    print(
+        "========================================"
+    )
 
     print(
         "保存記事数:",
