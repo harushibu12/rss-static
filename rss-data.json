@@ -105,29 +105,9 @@
     "pubDate": "Tue, 29 Sep 2026 00:00:00 +0900"
   },
   {
-    "title": "400Gbps光通信を実証、imecが5V動作の超高速APD",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news050.html",
-    "pubDate": "Mon, 28 Sep 2026 00:00:00 +0900"
-  },
-  {
     "title": "ニデックが「岸田社長の解任決議」報道にコメント",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news102.html",
     "pubDate": "Mon, 28 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "三菱電機、NVIDIA対応AIデータセンターの電力／冷却を丸ごと設計",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news115.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ハフニウムの国内製造技術を確立、第一稀元素化学工業",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news044.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "住友金属鉱山、「世界初」300mm貼り合わせSiC基板開発",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
   },
   {
     "title": "26年Q2の半導体世界ランキングから読み取る「本当の勝者」",
@@ -140,9 +120,9 @@
     "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
   },
   {
-    "title": "三菱電機、量子コンピュータ大規模化へ研究加速",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/24/news023.html",
-    "pubDate": "Thu, 24 Sep 2026 00:00:00 +0900"
+    "title": "住友金属鉱山、「世界初」300mm貼り合わせSiC基板開発",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
+    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
   },
   {
     "title": "ルネサスが超小型「GreenPAK」、設定書き換え何度でも",
@@ -153,35 +133,5 @@
     "title": "2nm世代採用 「iPhone 18 Pro」分解で見える7000日の進化の歩み",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news069.html",
     "pubDate": "Thu, 17 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "サブテラヘルツ帯で「世界最速」2Tビット/秒、100m伝送を実証",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news045.html",
-    "pubDate": "Mon, 14 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ソニーとAramcoが協業へ センサーとエッジAIを現場に",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/09/news042.html",
-    "pubDate": "Wed, 09 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "MEMS一体型単結晶ダイヤモンド量子センサー実現",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/07/news022.html",
-    "pubDate": "Mon, 07 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「2世代先」を狙う 京セラのセラミックパッケージ戦略",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/04/news051.html",
-    "pubDate": "Fri, 04 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "半導体配線界面の化学構造変化を直接可視化、TRCら",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/01/news026.html",
-    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "電流比較器にダイヤモンド量子センサーを導入",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/20/news041.html",
-    "pubDate": "Thu, 20 Aug 2026 00:00:00 +0900"
   }
 ]
