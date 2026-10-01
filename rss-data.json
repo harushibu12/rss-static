@@ -1,105 +1,187 @@
-{
-  "updated": "2026-10-01T08:52:16.542758+00:00",
-  "items": [
-    {
-      "title": "ニデック、最終赤字5646億円　監査法人は「意見不表明」",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news111.html",
-      "pubDate": "Wed, 30 Sep 2026 20:26:00 +0900"
-    },
-    {
-      "title": "JDI茂原工場、新光電気が取得　先端半導体パッケージ工場に",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news105.html",
-      "pubDate": "Wed, 30 Sep 2026 16:55:00 +0900"
-    },
-    {
-      "title": "「水だけで」SiCウエハー端面研磨 ダイヤ砥粒入りパッド",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news098.html",
-      "pubDate": "Wed, 30 Sep 2026 15:30:00 +0900"
-    },
-    {
-      "title": "飛行中ドローンから高解像度ライブ映像伝送、京大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news043.html",
-      "pubDate": "Wed, 30 Sep 2026 14:30:00 +0900"
-    },
-    {
-      "title": "TSMC「A14」設計にエージェントAI、Synopsysと協業",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news059.html",
-      "pubDate": "Wed, 30 Sep 2026 13:30:00 +0900"
-    },
-    {
-      "title": "複合機のVCSEL技術で空間センシング開発、富士フイルム",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news063.html",
-      "pubDate": "Wed, 30 Sep 2026 12:30:00 +0900"
-    },
-    {
-      "title": "HBM価格は2027年に2.2倍へ　供給不足続く",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news066.html",
-      "pubDate": "Wed, 30 Sep 2026 11:30:00 +0900"
-    },
-    {
-      "title": "Huawei「タウスケーリング」用いたプロセッサが市場へ",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news074.html",
-      "pubDate": "Wed, 30 Sep 2026 11:00:00 +0900"
-    },
-    {
-      "title": "SiC IC実用化へ前進！ 6インチ全面でJFET作製、京大",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news040.html",
-      "pubDate": "Wed, 30 Sep 2026 10:30:00 +0900"
-    },
-    {
-      "title": "TOPPANとBroadcom合弁、シンガポールFC-BGA基板工場",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news065.html",
-      "pubDate": "Wed, 30 Sep 2026 10:00:00 +0900"
-    },
-    {
-      "title": "村田製作所がVRグローブ新興と協業 AI時代の入力機器に商機",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news042.html",
-      "pubDate": "Wed, 30 Sep 2026 09:30:00 +0900"
-    },
-    {
-      "title": "蛍光イメージングとMRIで使える新イメージング材料",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news041.html",
-      "pubDate": "Wed, 30 Sep 2026 09:00:00 +0900"
-    },
-    {
-      "title": "ニデック岸田社長が辞任　財務報告で「適切とは言いかねる言動」",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news096.html",
-      "pubDate": "Tue, 29 Sep 2026 19:06:00 +0900"
-    },
-    {
-      "title": "トレンチゲート型SiC MOSFETの効率／信頼性を両立する新技術",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news053.html",
-      "pubDate": "Thu, 01 Oct 2026 16:00:00 +0900"
-    },
-    {
-      "title": "先進半導体パッケージの故障解析、浜松ホトニクスが新装置",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news025.html",
-      "pubDate": "Thu, 01 Oct 2026 15:30:00 +0900"
-    },
-    {
-      "title": "SiemensとTSMC、AIで半導体設計を自動化　DRC違反を修正",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news049.html",
-      "pubDate": "Thu, 01 Oct 2026 13:30:00 +0900"
-    },
-    {
-      "title": "フィジカルAIが生み出す新たな「設計思想」",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news001.html",
-      "pubDate": "Thu, 01 Oct 2026 13:00:00 +0900"
-    },
-    {
-      "title": "Infineonが狙う70の関節、ヒューマノイド1台「500ドル」の商機",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news042.html",
-      "pubDate": "Thu, 01 Oct 2026 11:00:00 +0900"
-    },
-    {
-      "title": "スマートフォン「iPhone」歴代モデルの要素技術（前編）",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news026.html",
-      "pubDate": "Thu, 01 Oct 2026 10:30:00 +0900"
-    },
-    {
-      "title": "村田製作所、AIエージェント活用研究開発基盤を開発",
-      "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news024.html",
-      "pubDate": "Thu, 01 Oct 2026 09:30:00 +0900"
-    }
-  ]
-}
+[
+  {
+    "title": "�j�f�b�N�����R�p���d�q�𔄋p 1029���~��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news085.html",
+    "pubDate": "Fri, 02 Oct 2026 03:30:00 +0900"
+  },
+  {
+    "title": "�g�����`�Q�[�g�^SiC MOSFET�̌����^�M�����𗼗�����V�Z�p",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news053.html",
+    "pubDate": "Fri, 02 Oct 2026 01:00:00 +0900"
+  },
+  {
+    "title": "��i�����̃p�b�P�[�W�̌̏��́A�l���z�g�j�N�X���V���u",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news025.html",
+    "pubDate": "Fri, 02 Oct 2026 00:30:00 +0900"
+  },
+  {
+    "title": "Siemens��TSMC�AAI�Ŕ����̐݌v���������@DRC�ᔽ���C��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news049.html",
+    "pubDate": "Thu, 01 Oct 2026 22:30:00 +0900"
+  },
+  {
+    "title": "�t�B�W�J��AI�����ݏo���V���ȁu�݌v�v�z�v",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news001.html",
+    "pubDate": "Thu, 01 Oct 2026 22:00:00 +0900"
+  },
+  {
+    "title": "Infineon���_��70�̊֐߁A�q���[�}�m�C�h1��u500�h���v�̏��@",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news042.html",
+    "pubDate": "Thu, 01 Oct 2026 20:00:00 +0900"
+  },
+  {
+    "title": "�X�}�[�g�t�H���uiPhone�v��ヂ�f���̗v�f�Z�p�i�O�ҁj",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news026.html",
+    "pubDate": "Thu, 01 Oct 2026 19:30:00 +0900"
+  },
+  {
+    "title": "���c���쏊�AAI�G�[�W�F���g���p�����J����Ղ��J��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news024.html",
+    "pubDate": "Thu, 01 Oct 2026 18:30:00 +0900"
+  },
+  {
+    "title": "�j�f�b�N�A�ŏI�Ԏ�5646���~�@�č��@�l�́u�ӌ��s�\\���v",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news111.html",
+    "pubDate": "Thu, 01 Oct 2026 05:26:00 +0900"
+  },
+  {
+    "title": "JDI�Ό��H��A�V���d�C���擾�@��[�����̃p�b�P�[�W�H���",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news105.html",
+    "pubDate": "Thu, 01 Oct 2026 01:55:00 +0900"
+  },
+  {
+    "title": "�u�������ŁvSiC�E�G�n�[�[�ʌ��� �_�C���u������p�b�h",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news098.html",
+    "pubDate": "Thu, 01 Oct 2026 00:30:00 +0900"
+  },
+  {
+    "title": "��s���h���[�����獂�𑜓x���C�u�f���`���A����",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news043.html",
+    "pubDate": "Wed, 30 Sep 2026 23:30:00 +0900"
+  },
+  {
+    "title": "TSMC�uA14�v�݌v�ɃG�[�W�F���gAI�ASynopsys�Ƌ���",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news059.html",
+    "pubDate": "Wed, 30 Sep 2026 22:30:00 +0900"
+  },
+  {
+    "title": "�����@��VCSEL�Z�p�ŋ�ԃZ���V���O�J���A�x�m�t�C����",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news063.html",
+    "pubDate": "Wed, 30 Sep 2026 21:30:00 +0900"
+  },
+  {
+    "title": "HBM���i��2027�N��2.2�{�ց@�����s������",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news066.html",
+    "pubDate": "Wed, 30 Sep 2026 20:30:00 +0900"
+  },
+  {
+    "title": "Huawei�u�^�E�X�P�[�����O�v�p�����v���Z�b�T���s���",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news074.html",
+    "pubDate": "Wed, 30 Sep 2026 20:00:00 +0900"
+  },
+  {
+    "title": "SiC IC���p���֑O�i�I 6�C���`�S�ʂ�JFET�쐻�A����",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news040.html",
+    "pubDate": "Wed, 30 Sep 2026 19:30:00 +0900"
+  },
+  {
+    "title": "TOPPAN��Broadcom���فA�V���K�|�[��FC-BGA��H��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news065.html",
+    "pubDate": "Wed, 30 Sep 2026 19:00:00 +0900"
+  },
+  {
+    "title": "�j�f�b�N�ݓc�В������C�@�����񍐂Łu�K�؂Ƃ͌������˂錾���v",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news096.html",
+    "pubDate": "Wed, 30 Sep 2026 04:06:00 +0900"
+  },
+  {
+    "title": "TDK�Ƒ��z�U�d�����Ƃ� �u���{��g�̉\\�����܂ߌ����v",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news094.html",
+    "pubDate": "Wed, 30 Sep 2026 02:25:00 +0900"
+  },
+  {
+    "title": "�uiPhone 18 Pro�v�̃C���[�W�Z���T�[�A3��S�ă\\�j�[��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news067.html",
+    "pubDate": "Tue, 29 Sep 2026 20:00:00 +0900"
+  },
+  {
+    "title": "�j�f�b�N���u�ݓc�В��̉�C���c�v�񓹂ɃR�����g",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news102.html",
+    "pubDate": "Tue, 29 Sep 2026 00:40:00 +0900"
+  },
+  {
+    "title": "2nm����̗p �uiPhone 18 Pro�v�����Ō�����7000���̐i���̕���",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news069.html",
+    "pubDate": "Mon, 28 Sep 2026 20:30:00 +0900"
+  },
+  {
+    "title": "400Gbps���ʐM�����؁Aimec��5V����̒�����APD",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news050.html",
+    "pubDate": "Mon, 28 Sep 2026 19:30:00 +0900"
+  },
+  {
+    "title": "�O�H�d�@�ANVIDIA�Ή�AI�f�[�^�Z���^�[�̓d�́^��p���ۂ��Ɛ݌v",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news115.html",
+    "pubDate": "Sat, 26 Sep 2026 05:20:00 +0900"
+  },
+  {
+    "title": "�n�t�j�E���̍��������Z�p���m���A���H���f���w�H��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news044.html",
+    "pubDate": "Sat, 26 Sep 2026 00:30:00 +0900"
+  },
+  {
+    "title": "���{�̋Z�p�͂����W�I Tesla���70���y���C���o�[�^�[",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news061.html",
+    "pubDate": "Fri, 25 Sep 2026 21:30:00 +0900"
+  },
+  {
+    "title": "26�NQ2�̔����̐��E�����L���O����ǂݎ��u�{���̏��ҁv",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news025.html",
+    "pubDate": "Fri, 25 Sep 2026 20:00:00 +0900"
+  },
+  {
+    "title": "�Z�F�����z�R�A�u���E���v300mm�\\�荇�킹SiC��J��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
+    "pubDate": "Fri, 25 Sep 2026 19:00:00 +0900"
+  },
+  {
+    "title": "���l�T�X�������^�uGreenPAK�v�A�ݒ菑���������x�ł�",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/24/news085.html",
+    "pubDate": "Fri, 25 Sep 2026 02:00:00 +0900"
+  },
+  {
+    "title": "�O�H�d�@�A�ʎq�R���s���[�^��K�͉��֌�������",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/24/news023.html",
+    "pubDate": "Thu, 24 Sep 2026 22:30:00 +0900"
+  },
+  {
+    "title": "�T�u�e���w���c�тŁu���E�ő��v2T�r�b�g/�b�A100m�`��������",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/14/news045.html",
+    "pubDate": "Tue, 15 Sep 2026 00:30:00 +0900"
+  },
+  {
+    "title": "�\\�j�[��Aramco�����Ƃ� �Z���T�[�ƃG�b�WAI�������",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/09/news042.html",
+    "pubDate": "Wed, 09 Sep 2026 23:30:00 +0900"
+  },
+  {
+    "title": "MEMS��̌^�P�����_�C�������h�ʎq�Z���T�[����",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/07/news022.html",
+    "pubDate": "Mon, 07 Sep 2026 18:30:00 +0900"
+  },
+  {
+    "title": "�u2�����v��_���@���Z���̃Z���~�b�N�p�b�P�[�W�헪",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/04/news051.html",
+    "pubDate": "Fri, 04 Sep 2026 19:30:00 +0900"
+  },
+  {
+    "title": "�����̔z���E�ʂ̉��w�\\���ω��𒼐ډ����ATRC��",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/01/news026.html",
+    "pubDate": "Tue, 01 Sep 2026 18:30:00 +0900"
+  },
+  {
+    "title": "�d����r��Ƀ_�C�������h�ʎq�Z���T�[�𓱓�",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2608/20/news041.html",
+    "pubDate": "Thu, 20 Aug 2026 22:30:00 +0900"
+  }
+]
