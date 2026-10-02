@@ -1,5 +1,15 @@
 [
   {
+    "title": "データ移動減らすCXLデバイス メモリ近傍に1000超のRISC-Vコア",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news025.html",
+    "pubDate": "Fri, 02 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "Infineon、タイに後工程の新拠点 将来性見据えた重要ハブ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news029.html",
+    "pubDate": "Fri, 02 Oct 2026 00:00:00 +0900"
+  },
+  {
     "title": "NVIDIAが芝浦工大の計算手法採用 倍精度計算を高速化",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news019.html",
     "pubDate": "Fri, 02 Oct 2026 00:00:00 +0900"
@@ -15,11 +25,6 @@
     "pubDate": "Thu, 01 Oct 2026 00:00:00 +0900"
   },
   {
-    "title": "Infineonが狙う70の関節、ヒューマノイド1台「500ドル」の商機",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news042.html",
-    "pubDate": "Thu, 01 Oct 2026 00:00:00 +0900"
-  },
-  {
     "title": "先進半導体パッケージの故障解析、浜松ホトニクスが新装置",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news025.html",
     "pubDate": "Thu, 01 Oct 2026 00:00:00 +0900"
@@ -27,6 +32,11 @@
   {
     "title": "SiemensとTSMC、AIで半導体設計を自動化 DRC違反を修正",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news049.html",
+    "pubDate": "Thu, 01 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "Infineonが狙う70の関節、ヒューマノイド1台「500ドル」の商機",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/01/news042.html",
     "pubDate": "Thu, 01 Oct 2026 00:00:00 +0900"
   },
   {
@@ -53,90 +63,5 @@
     "title": "JDI茂原工場、新光電気が取得 先端半導体パッケージ工場に",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news105.html",
     "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「水だけで」SiCウエハー端面研磨 ダイヤ砥粒入りパッド",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news098.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "飛行中ドローンから高解像度ライブ映像伝送、京大",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news043.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "TSMC「A14」設計にエージェントAI、Synopsysと協業",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news059.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "複合機のVCSEL技術で空間センシング開発、富士フイルム",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news063.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "HBM価格は2027年に2.2倍へ 供給不足続く",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news066.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "Huawei「タウスケーリング」用いたプロセッサが市場へ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news074.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "SiC IC実用化へ前進！ 6インチ全面でJFET作製、京大",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news040.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "TOPPANとBroadcom合弁、シンガポールFC-BGA基板工場",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/30/news065.html",
-    "pubDate": "Wed, 30 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ニデック岸田社長が辞任 財務報告で「適切とは言いかねる言動」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news096.html",
-    "pubDate": "Tue, 29 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "TDKと太陽誘電が協業へ 「資本提携の可能性も含め検討」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news094.html",
-    "pubDate": "Tue, 29 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「iPhone 18 Pro」のイメージセンサー、3眼全てソニー製",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/29/news067.html",
-    "pubDate": "Tue, 29 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ニデックが「岸田社長の解任決議」報道にコメント",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/28/news102.html",
-    "pubDate": "Mon, 28 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "26年Q2の半導体世界ランキングから読み取る「本当の勝者」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news025.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "日本の技術力を結集！ Teslaより70％軽いインバーター",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news061.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "住友金属鉱山、「世界初」300mm貼り合わせSiC基板開発",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/25/news064.html",
-    "pubDate": "Fri, 25 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "半導体誘致で対照的な日韓、共通する「官」「民」のズレ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/18/news051.html",
-    "pubDate": "Fri, 18 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "2nm世代採用 「iPhone 18 Pro」分解で見える7000日の進化の歩み",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2609/17/news069.html",
-    "pubDate": "Thu, 17 Sep 2026 00:00:00 +0900"
   }
 ]
