@@ -28,7 +28,7 @@ ARTICLE_PATTERN = re.compile(
 )
 
 
-class SectionLinkParser(HTMLParser):
+class SectionParser(HTMLParser):
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -36,28 +36,29 @@ class SectionLinkParser(HTMLParser):
         self.current_href = None
         self.current_text = []
 
-        self.links = []
-
         self.current_heading = None
         self.heading_text = []
 
-        self.in_target_section = False
-        self.target_section_count = 0
+        self.active_section = None
+        self.found_top_stories = False
+        self.found_new_articles = False
+
+        self.links = []
 
     def handle_starttag(self, tag, attrs):
 
         tag = tag.lower()
         attrs = dict(attrs)
 
-        # 見出し開始
-        if tag in ("h1", "h2", "h3", "h4", "h5", "h6"):
+        # h2見出し開始
+        if tag == "h2":
 
-            self.current_heading = tag
+            self.current_heading = "h2"
             self.heading_text = []
 
             return
 
-        # リンク開始
+        # aタグ開始
         if tag == "a":
 
             href = attrs.get("href")
@@ -81,8 +82,8 @@ class SectionLinkParser(HTMLParser):
 
         tag = tag.lower()
 
-        # 見出し終了
-        if self.current_heading == tag:
+        # h2終了
+        if tag == "h2" and self.current_heading == "h2":
 
             heading = " ".join(
                 self.heading_text
@@ -94,43 +95,54 @@ class SectionLinkParser(HTMLParser):
                 heading
             ).strip()
 
+            print(
+                "H2見出し:",
+                heading
+            )
+
+            # Top Stories開始
             if heading == "Top Stories":
 
-                self.in_target_section = True
-                self.target_section_count += 1
+                self.active_section = "top"
+
+                self.found_top_stories = True
 
                 print(
-                    "対象エリア開始: Top Stories"
+                    ">>> Top Stories取得開始"
                 )
 
-            elif heading == "新着記事":
+            # 最初の新着記事開始
+            elif (
+                heading == "新着記事"
+                and not self.found_new_articles
+            ):
 
-                self.in_target_section = True
-                self.target_section_count += 1
+                self.active_section = "new"
+
+                self.found_new_articles = True
 
                 print(
-                    "対象エリア開始: 新着記事"
+                    ">>> 新着記事取得開始"
                 )
 
-            elif self.in_target_section:
+            # それ以外のH2に到達したら終了
+            else:
 
-                # Top Stories / 新着記事の次の
-                # 大見出しに到達したら終了
-                if tag in ("h1", "h2"):
-
-                    self.in_target_section = False
+                if self.active_section is not None:
 
                     print(
-                        "対象エリア終了:",
+                        "<<< 対象エリア終了:",
                         heading
                     )
+
+                self.active_section = None
 
             self.current_heading = None
             self.heading_text = []
 
             return
 
-        # リンク終了
+        # aタグ終了
         if tag == "a":
 
             if self.current_href is not None:
@@ -145,12 +157,16 @@ class SectionLinkParser(HTMLParser):
                     text
                 ).strip()
 
-                if self.in_target_section:
+                if self.active_section in (
+                    "top",
+                    "new"
+                ):
 
                     self.links.append(
                         (
                             self.current_href,
-                            text
+                            text,
+                            self.active_section
                         )
                     )
 
@@ -285,10 +301,7 @@ def decode_html(data, content_type):
     candidates = []
 
     if charset:
-
-        candidates.append(
-            charset
-        )
+        candidates.append(charset)
 
     candidates.extend([
         "utf-8",
@@ -605,7 +618,7 @@ def main():
     )
 
     print(
-        "取得対象：Top Stories + 新着記事"
+        "取得対象：Top Stories + 最初の新着記事"
     )
 
     print(
@@ -628,7 +641,7 @@ def main():
 
         return
 
-    parser = SectionLinkParser()
+    parser = SectionParser()
 
     try:
 
@@ -652,12 +665,17 @@ def main():
     )
 
     print(
-        "対象エリア数:",
-        parser.target_section_count
+        "Top Stories検出:",
+        parser.found_top_stories
     )
 
     print(
-        "対象エリア内の記事リンク:",
+        "新着記事検出:",
+        parser.found_new_articles
+    )
+
+    print(
+        "対象リンク数:",
         len(parser.links)
     )
 
@@ -665,27 +683,22 @@ def main():
         "========================================"
     )
 
-    if parser.target_section_count == 0:
+    if not parser.found_top_stories:
 
         print(
-            "Top Stories / 新着記事の"
-            "見出しを検出できませんでした。"
+            "Top Storiesを検出できませんでした。"
         )
 
         print(
-            "サイト構造が変更された可能性があります。"
-        )
-
-        print(
-            "安全のため既存JSONは変更しません。"
+            "既存JSONは変更しません。"
         )
 
         return
 
-    if not parser.links:
+    if not parser.found_new_articles:
 
         print(
-            "対象エリアから記事URLを取得できませんでした。"
+            "新着記事を検出できませんでした。"
         )
 
         print(
@@ -696,7 +709,7 @@ def main():
 
     candidate_articles = {}
 
-    for href, text in parser.links:
+    for href, text, section in parser.links:
 
         url = normalize_url(
             href
@@ -707,18 +720,26 @@ def main():
 
         if url not in candidate_articles:
 
-            candidate_articles[url] = text
+            candidate_articles[url] = {
+                "title": text,
+                "section": section
+            }
 
         else:
 
-            old_text = candidate_articles[url]
+            old_text = candidate_articles[
+                url
+            ]["title"]
 
             if len(text) > len(old_text):
 
-                candidate_articles[url] = text
+                candidate_articles[url] = {
+                    "title": text,
+                    "section": section
+                }
 
     print(
-        "対象エリアから取得した記事URL:",
+        "対象記事URL:",
         len(candidate_articles)
     )
 
@@ -754,15 +775,42 @@ def main():
     )
 
     print(
-        "記事ページ確認数:",
-        len(candidates)
+        "========================================"
+    )
+
+    print(
+        "取得対象記事"
+    )
+
+    print(
+        "========================================"
+    )
+
+    for index, (
+        url,
+        info
+    ) in enumerate(
+        candidates,
+        1
+    ):
+
+        print(
+            index,
+            "|",
+            info["section"],
+            "|",
+            info["title"]
+        )
+
+    print(
+        "========================================"
     )
 
     articles = []
 
     for index, (
         url,
-        listing_title
+        info
     ) in enumerate(
         candidates,
         1
@@ -786,12 +834,12 @@ def main():
 
         print(
             "一覧タイトル:",
-            listing_title
+            info["title"]
         )
 
         article = extract_article_info(
             url,
-            listing_title
+            info["title"]
         )
 
         if article:
