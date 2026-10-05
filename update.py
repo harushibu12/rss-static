@@ -1,178 +1,173 @@
-import urllib.request
-import urllib.error
 import json
 import os
 import re
 import time
-from html.parser import HTMLParser
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urljoin
+from html.parser import HTMLParser
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
-BASE_URL = "https://eetimes.itmedia.co.jp"
-SOURCE_URL = "https://eetimes.itmedia.co.jp/"
+
+BASE_URL = "https://eetimes.itmedia.co.jp/"
 OUTPUT = "rss-data.json"
 
 MAX_ITEMS = 50
 TIMEOUT = 30
 
+JST = timezone(timedelta(hours=9))
+
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/140.0 Safari/537.36"
+    "Chrome/140.0.0.0 Safari/537.36"
 )
 
-JST = timezone(timedelta(hours=9))
 
 ARTICLE_PATTERN = re.compile(
-    r"/ee/(?:articles|spv)/(\d{2})(\d{2})/(\d{2})/"
+    r"/ee/(?:articles|spv)/(\d{4})/(\d{2})/(\d{2})/"
 )
 
+
+# --------------------------------------------------
+# 文字コード判定
+# --------------------------------------------------
+
+def decode_html(data):
+    candidates = []
+
+    # HTTPヘッダー等で判定できる可能性のあるもの
+    for enc in [
+        "utf-8",
+        "cp932",
+        "shift_jis",
+        "euc_jp",
+    ]:
+        try:
+            text = data.decode(enc)
+            candidates.append((text.count("\ufffd"), text))
+        except Exception:
+            pass
+
+    if not candidates:
+        return data.decode("utf-8", errors="replace")
+
+    candidates.sort(key=lambda x: x[0])
+    return candidates[0][1]
+
+
+# --------------------------------------------------
+# Top Stories / 新着記事 のリンク取得
+# --------------------------------------------------
 
 class SectionParser(HTMLParser):
 
     def __init__(self):
-        super().__init__(convert_charrefs=True)
+        super().__init__(
+            convert_charrefs=True
+        )
 
-        self.current_href = None
-        self.current_text = []
-
-        self.current_heading = None
-        self.heading_text = []
+        self.current_tag = None
+        self.text_buffer = ""
 
         self.active_section = None
-        self.found_top_stories = False
-        self.found_new_articles = False
+
+        self.top_found = False
+        self.new_found = False
 
         self.links = []
 
+        self.current_href = None
+        self.current_link_text = ""
+
     def handle_starttag(self, tag, attrs):
 
-        tag = tag.lower()
         attrs = dict(attrs)
 
-        # h2見出し開始
-        if tag == "h2":
+        # 見出し
+        if tag.lower() in ("h1", "h2", "h3"):
 
-            self.current_heading = "h2"
-            self.heading_text = []
+            self.current_tag = tag.lower()
+            self.text_buffer = ""
 
             return
 
-        # aタグ開始
-        if tag == "a":
+        # リンク
+        if tag.lower() == "a":
 
             href = attrs.get("href")
 
             if href:
-
                 self.current_href = href
-                self.current_text = []
-
-    def handle_data(self, data):
-
-        if self.current_heading is not None:
-
-            self.heading_text.append(data)
-
-        if self.current_href is not None:
-
-            self.current_text.append(data)
+                self.current_link_text = ""
 
     def handle_endtag(self, tag):
 
         tag = tag.lower()
 
-        # h2終了
-        if tag == "h2" and self.current_heading == "h2":
+        # 見出し終了
+        if self.current_tag == tag:
 
-            heading = " ".join(
-                self.heading_text
-            )
-
-            heading = re.sub(
+            text = re.sub(
                 r"\s+",
                 " ",
-                heading
+                self.text_buffer
             ).strip()
 
-            print(
-                "H2見出し:",
-                heading
-            )
-
-            # Top Stories開始
-            if heading == "Top Stories":
+            # Top Stories
+            if text == "Top Stories":
 
                 self.active_section = "top"
+                self.top_found = True
 
-                self.found_top_stories = True
+            # 新着記事
+            elif text == "新着記事":
 
-                print(
-                    ">>> Top Stories取得開始"
-                )
+                # 最初の新着記事だけ採用
+                if not self.new_found:
 
-            # 最初の新着記事開始
-            elif (
-                heading == "新着記事"
-                and not self.found_new_articles
-            ):
+                    self.active_section = "new"
+                    self.new_found = True
 
-                self.active_section = "new"
+                else:
 
-                self.found_new_articles = True
+                    self.active_section = None
 
-                print(
-                    ">>> 新着記事取得開始"
-                )
-
-            # それ以外のH2に到達したら終了
+            # 別の見出しに到達
             else:
 
-                if self.active_section is not None:
+                if self.active_section in ("top", "new"):
+                    self.active_section = None
 
-                    print(
-                        "<<< 対象エリア終了:",
-                        heading
-                    )
+            self.current_tag = None
+            self.text_buffer = ""
 
-                self.active_section = None
-
-            self.current_heading = None
-            self.heading_text = []
-
-            return
-
-        # aタグ終了
+        # リンク終了
         if tag == "a":
 
-            if self.current_href is not None:
+            if (
+                self.current_href
+                and self.active_section in ("top", "new")
+            ):
 
-                text = " ".join(
-                    self.current_text
+                self.links.append(
+                    (
+                        self.current_href,
+                        self.active_section
+                    )
                 )
 
-                text = re.sub(
-                    r"\s+",
-                    " ",
-                    text
-                ).strip()
-
-                if self.active_section in (
-                    "top",
-                    "new"
-                ):
-
-                    self.links.append(
-                        (
-                            self.current_href,
-                            text,
-                            self.active_section
-                        )
-                    )
-
             self.current_href = None
-            self.current_text = []
+            self.current_link_text = ""
 
+    def handle_data(self, data):
+
+        if self.current_tag:
+            self.text_buffer += data
+
+
+# --------------------------------------------------
+# URL正規化
+# --------------------------------------------------
 
 def normalize_url(url):
 
@@ -182,464 +177,346 @@ def normalize_url(url):
     url = url.strip()
 
     if url.startswith("//"):
-
         url = "https:" + url
 
     elif url.startswith("/"):
-
-        url = urljoin(
-            BASE_URL,
-            url
-        )
+        url = BASE_URL.rstrip("/") + url
 
     elif not url.startswith("http"):
+        return None
 
-        url = urljoin(
-            BASE_URL + "/",
-            url
-        )
+    # EE Times記事URLだけ
+    if not ARTICLE_PATTERN.search(url):
+        return None
 
     return url.split("#")[0]
 
 
-def is_article_url(url):
+# --------------------------------------------------
+# HTML取得
+# --------------------------------------------------
 
-    if not url:
-        return False
+def fetch_html(url):
 
-    if not url.startswith(
-        BASE_URL + "/ee/"
-    ):
-        return False
-
-    return ARTICLE_PATTERN.search(
-        url
-    ) is not None
-
-
-def date_from_url(url):
-
-    match = ARTICLE_PATTERN.search(url)
-
-    if not match:
-        return None
-
-    yy = int(match.group(1))
-    mm = int(match.group(2))
-    dd = int(match.group(3))
-
-    try:
-
-        return datetime(
-            2000 + yy,
-            mm,
-            dd,
-            0,
-            0,
-            0,
-            tzinfo=JST
-        )
-
-    except ValueError:
-
-        return None
-
-
-def detect_charset(data, content_type):
-
-    if content_type:
-
-        match = re.search(
-            r"charset\s*=\s*[\"']?([\w.-]+)",
-            content_type,
-            re.I
-        )
-
-        if match:
-
-            return match.group(1).strip()
-
-    head = data[:10000]
-
-    match = re.search(
-        rb'<meta[^>]+charset\s*=\s*["\']?\s*([A-Za-z0-9._-]+)',
-        head,
-        re.I
-    )
-
-    if match:
-
-        return match.group(1).decode(
-            "ascii",
-            errors="ignore"
-        ).strip()
-
-    match = re.search(
-        rb'<meta[^>]+content\s*=\s*["\'][^"\']*charset\s*=\s*'
-        rb'([A-Za-z0-9._-]+)',
-        head,
-        re.I
-    )
-
-    if match:
-
-        return match.group(1).decode(
-            "ascii",
-            errors="ignore"
-        ).strip()
-
-    return None
-
-
-def decode_html(data, content_type):
-
-    charset = detect_charset(
-        data,
-        content_type
-    )
-
-    candidates = []
-
-    if charset:
-        candidates.append(charset)
-
-    candidates.extend([
-        "utf-8",
-        "cp932",
-        "shift_jis",
-        "euc_jp"
-    ])
-
-    tried = set()
-
-    best_html = None
-    best_charset = None
-    best_replacements = 10 ** 9
-
-    for candidate in candidates:
-
-        candidate_key = candidate.lower()
-
-        if candidate_key in tried:
-            continue
-
-        tried.add(candidate_key)
-
-        try:
-
-            html = data.decode(
-                candidate,
-                errors="replace"
-            )
-
-            replacements = html.count("�")
-
-            print(
-                "文字コード:",
-                candidate,
-                " / �:",
-                replacements
-            )
-
-            if replacements < best_replacements:
-
-                best_html = html
-                best_charset = candidate
-                best_replacements = replacements
-
-            if replacements == 0:
-
-                print(
-                    "使用文字コード:",
-                    candidate
-                )
-
-                return html
-
-        except Exception:
-            pass
-
-    if best_html is not None:
-
-        print(
-            "使用文字コード:",
-            best_charset
-        )
-
-        return best_html
-
-    return data.decode(
-        "utf-8",
-        errors="replace"
-    )
-
-
-def fetch_url(url):
-
-    print()
-    print("取得開始:")
-    print(url)
-
-    request = urllib.request.Request(
+    req = Request(
         url,
         headers={
             "User-Agent": USER_AGENT,
             "Accept": (
-                "text/html,"
-                "application/xhtml+xml,"
-                "application/xml;q=0.9,"
-                "*/*;q=0.8"
+                "text/html,application/xhtml+xml,"
+                "application/xml;q=0.9,*/*;q=0.8"
             ),
-            "Accept-Language":
-                "ja,en-US;q=0.9,en;q=0.8"
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
         }
     )
 
-    try:
+    with urlopen(req, timeout=TIMEOUT) as response:
 
-        with urllib.request.urlopen(
-            request,
-            timeout=TIMEOUT
-        ) as response:
+        data = response.read()
 
-            data = response.read()
+    return decode_html(data)
 
-            content_type = response.headers.get(
-                "Content-Type",
-                ""
-            )
 
-            print(
-                "Content-Type:",
-                content_type
-            )
+# --------------------------------------------------
+# 日付
+# --------------------------------------------------
 
-            print(
-                "取得成功:",
-                len(data),
-                "bytes"
-            )
+def fallback_date_from_url(url):
 
-            return decode_html(
-                data,
-                content_type
-            )
+    m = ARTICLE_PATTERN.search(url)
 
-    except urllib.error.HTTPError as e:
+    if not m:
+        return None
 
-        print(
-            "HTTPエラー:",
-            e.code,
-            e.reason
+    year, month, day = m.groups()
+
+    return datetime(
+        int(year),
+        int(month),
+        int(day),
+        0,
+        0,
+        0,
+        tzinfo=JST
+    )
+
+
+# --------------------------------------------------
+# 公開日時を記事HTMLから取得
+# --------------------------------------------------
+
+def extract_published_datetime(html):
+
+    patterns = [
+
+        # Open Graph
+        r'<meta[^>]+property=["\']article:published_time["\'][^>]+content=["\']([^"\']+)',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']article:published_time["\']',
+
+        # datePublished
+        r'"datePublished"\s*:\s*"([^"]+)"',
+        r"'datePublished'\s*:\s*'([^']+)'",
+
+        # publish date
+        r'"publishDate"\s*:\s*"([^"]+)"',
+        r"'publishDate'\s*:\s*'([^']+)'",
+
+        # published
+        r'"published_time"\s*:\s*"([^"]+)"',
+        r"'published_time'\s*:\s*'([^']+)'",
+    ]
+
+    for pattern in patterns:
+
+        m = re.search(
+            pattern,
+            html,
+            re.IGNORECASE
         )
 
-    except urllib.error.URLError as e:
+        if not m:
+            continue
 
-        print(
-            "URLエラー:",
-            e.reason
+        value = (
+            m.group(1)
+            .strip()
+            .replace("Z", "+00:00")
         )
 
-    except TimeoutError:
+        try:
 
-        print("タイムアウト")
+            dt = datetime.fromisoformat(value)
 
-    except Exception as e:
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=JST)
 
-        print(
-            "予期しないエラー:",
-            repr(e)
+            return dt.astimezone(JST)
+
+        except Exception:
+            pass
+
+    # --------------------------------------------------
+    # 日本語の公開日時表記
+    # --------------------------------------------------
+
+    patterns_jp = [
+
+        r"(\d{4})年(\d{1,2})月(\d{1,2})日\s*(\d{1,2}):(\d{2})",
+
+        r"(\d{4})/(\d{1,2})/(\d{1,2})\s*(\d{1,2}):(\d{2})",
+
+        r"(\d{4})-(\d{1,2})-(\d{1,2})\s*(\d{1,2}):(\d{2})",
+    ]
+
+    for pattern in patterns_jp:
+
+        m = re.search(
+            pattern,
+            html
         )
+
+        if not m:
+            continue
+
+        try:
+
+            year, month, day, hour, minute = map(
+                int,
+                m.groups()
+            )
+
+            return datetime(
+                year,
+                month,
+                day,
+                hour,
+                minute,
+                tzinfo=JST
+            )
+
+        except Exception:
+            pass
 
     return None
 
 
-def clean_title(title):
+# --------------------------------------------------
+# タイトル取得
+# --------------------------------------------------
 
-    if not title:
-        return ""
+def extract_title(html):
 
-    title = re.sub(
-        r"<[^>]+>",
-        "",
-        title
-    )
+    # og:title
+    patterns = [
 
-    title = re.sub(
-        r"\s+",
-        " ",
-        title
-    ).strip()
+        r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)',
 
-    title = re.sub(
-        r"\s*\|\s*EE Times Japan\s*$",
-        "",
-        title,
-        flags=re.I
-    )
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:title["\']',
 
-    return title.strip()
-
-
-def extract_article_info(
-    url,
-    fallback_title=""
-):
-
-    html = fetch_url(url)
-
-    if not html:
-
-        fallback_date = date_from_url(
-            url
-        )
-
-        if not fallback_title:
-            return None
-
-        return {
-            "title":
-                clean_title(
-                    fallback_title
-                ),
-
-            "link":
-                url,
-
-            "pubDate":
-                (
-                    fallback_date.strftime(
-                        "%a, %d %b %Y 00:00:00 +0900"
-                    )
-                    if fallback_date
-                    else ""
-                ),
-
-            "_date":
-                (
-                    fallback_date.isoformat()
-                    if fallback_date
-                    else ""
-                )
-        }
-
-    title = None
-
-    title_patterns = [
-
-        r'<meta[^>]+property=["\']og:title["\']'
-        r'[^>]+content=["\'](.*?)["\']',
-
-        r'<meta[^>]+content=["\'](.*?)["\']'
-        r'[^>]+property=["\']og:title["\']'
+        r"<title[^>]*>(.*?)</title>",
     ]
 
-    for pattern in title_patterns:
+    for pattern in patterns:
 
-        match = re.search(
+        m = re.search(
             pattern,
             html,
-            re.I | re.S
+            re.IGNORECASE | re.DOTALL
         )
 
-        if match:
+        if not m:
+            continue
 
-            title = match.group(1).strip()
+        title = re.sub(
+            r"\s+",
+            " ",
+            m.group(1)
+        ).strip()
 
-            break
+        if title:
 
-    if not title:
+            # サイト名部分を除去
+            title = re.sub(
+                r"\s*[|｜]\s*EE Times Japan.*$",
+                "",
+                title,
+                flags=re.IGNORECASE
+            ).strip()
 
-        match = re.search(
-            r"<title[^>]*>(.*?)</title>",
-            html,
-            re.I | re.S
+            return title
+
+    return ""
+
+
+# --------------------------------------------------
+# 記事情報取得
+# --------------------------------------------------
+
+def fetch_article(url):
+
+    try:
+
+        html = fetch_html(url)
+
+        title = extract_title(html)
+
+        if not title:
+            print(
+                "タイトル取得失敗:",
+                url
+            )
+            return None
+
+        published = extract_published_datetime(html)
+
+        # 実際の公開日時が取れなければURL日付
+        if published is None:
+
+            published = fallback_date_from_url(url)
+
+            if published is None:
+                return None
+
+            print(
+                "公開日時なし → URL日付:",
+                title
+            )
+
+        else:
+
+            print(
+                "公開日時取得:",
+                published.strftime("%Y-%m-%d %H:%M"),
+                title
+            )
+
+        return {
+            "title": title,
+            "link": url,
+            "pubDate": published.strftime(
+                "%a, %d %b %Y %H:%M:%S %z"
+            ),
+            "_datetime": published.isoformat(),
+        }
+
+    except Exception as e:
+
+        print(
+            "記事取得失敗:",
+            url,
+            str(e)
         )
 
-        if match:
-
-            title = match.group(1).strip()
-
-    if not title:
-
-        title = fallback_title
-
-    title = clean_title(
-        title
-    )
-
-    if not title:
         return None
 
-    article_date = date_from_url(
-        url
-    )
 
-    if article_date:
+# --------------------------------------------------
+# 既存JSON読み込み
+# --------------------------------------------------
 
-        pub_date = article_date.strftime(
-            "%a, %d %b %Y 00:00:00 +0900"
-        )
+def load_existing():
 
-        sort_date = article_date.isoformat()
+    if not os.path.exists(OUTPUT):
+        return None
 
-    else:
+    try:
 
-        pub_date = ""
-        sort_date = ""
+        with open(
+            OUTPUT,
+            "r",
+            encoding="utf-8"
+        ) as f:
 
-    return {
-        "title":
-            title,
+            return json.load(f)
 
-        "link":
-            url,
+    except Exception:
 
-        "pubDate":
-            pub_date,
+        return None
 
-        "_date":
-            sort_date
-    }
 
+# --------------------------------------------------
+# メイン
+# --------------------------------------------------
 
 def main():
 
-    print(
-        "========================================"
-    )
+    print("EE Times取得開始")
 
-    print(
-        "EE Times Japan 直接取得"
-    )
+    # ----------------------------------------------
+    # トップページ
+    # ----------------------------------------------
 
-    print(
-        "RSSは使用しません"
-    )
+    try:
 
-    print(
-        "取得対象：Top Stories + 最初の新着記事"
-    )
-
-    print(
-        "========================================"
-    )
-
-    html = fetch_url(
-        SOURCE_URL
-    )
-
-    if not html:
+        html = fetch_html(BASE_URL)
 
         print(
-            "トップページを取得できませんでした。"
+            "トップページ取得成功:",
+            len(html),
+            "bytes相当"
+        )
+
+    except (
+        HTTPError,
+        URLError,
+        TimeoutError,
+        Exception
+    ) as e:
+
+        print(
+            "トップページ取得失敗:",
+            str(e)
         )
 
         print(
-            "既存JSONは変更しません。"
+            "既存JSONを維持します。"
         )
 
         return
+
+    # ----------------------------------------------
+    # セクション解析
+    # ----------------------------------------------
 
     parser = SectionParser()
 
@@ -650,205 +527,116 @@ def main():
     except Exception as e:
 
         print(
-            "HTML解析エラー:",
-            repr(e)
+            "HTML解析失敗:",
+            str(e)
         )
 
         print(
-            "既存JSONは変更しません。"
+            "既存JSONを維持します。"
         )
 
         return
 
     print(
-        "========================================"
+        "Top Stories:",
+        parser.top_found
     )
 
     print(
-        "Top Stories検出:",
-        parser.found_top_stories
+        "新着記事:",
+        parser.new_found
     )
 
-    print(
-        "新着記事検出:",
-        parser.found_new_articles
-    )
-
-    print(
-        "対象リンク数:",
-        len(parser.links)
-    )
-
-    print(
-        "========================================"
-    )
-
-    if not parser.found_top_stories:
+    if not parser.top_found or not parser.new_found:
 
         print(
-            "Top Storiesを検出できませんでした。"
+            "必要なセクションを確認できませんでした。"
         )
 
         print(
-            "既存JSONは変更しません。"
+            "既存JSONを維持します。"
         )
 
         return
 
-    if not parser.found_new_articles:
+    # ----------------------------------------------
+    # URL整理
+    # ----------------------------------------------
 
-        print(
-            "新着記事を検出できませんでした。"
-        )
+    urls = []
 
-        print(
-            "既存JSONは変更しません。"
-        )
+    seen = set()
 
-        return
+    for href, section in parser.links:
 
-    candidate_articles = {}
+        url = normalize_url(href)
 
-    for href, text, section in parser.links:
-
-        url = normalize_url(
-            href
-        )
-
-        if not is_article_url(url):
+        if not url:
             continue
 
-        if url not in candidate_articles:
+        if url in seen:
+            continue
 
-            candidate_articles[url] = {
-                "title": text,
-                "section": section
-            }
+        seen.add(url)
 
-        else:
-
-            old_text = candidate_articles[
-                url
-            ]["title"]
-
-            if len(text) > len(old_text):
-
-                candidate_articles[url] = {
-                    "title": text,
-                    "section": section
-                }
+        urls.append(
+            (
+                url,
+                section
+            )
+        )
 
     print(
         "対象記事URL:",
-        len(candidate_articles)
+        len(urls)
     )
 
-    if not candidate_articles:
+    for url, section in urls:
 
         print(
-            "記事URLを取得できませんでした。"
+            section,
+            url
+        )
+
+    if not urls:
+
+        print(
+            "記事URLがありません。"
         )
 
         print(
-            "既存JSONは変更しません。"
+            "既存JSONを維持します。"
         )
 
         return
 
-    candidates = list(
-        candidate_articles.items()
-    )
-
-    candidates.sort(
-        key=lambda item: (
-            date_from_url(
-                item[0]
-            )
-            or datetime(
-                2000,
-                1,
-                1,
-                tzinfo=JST
-            )
-        ),
-        reverse=True
-    )
-
-    print(
-        "========================================"
-    )
-
-    print(
-        "取得対象記事"
-    )
-
-    print(
-        "========================================"
-    )
-
-    for index, (
-        url,
-        info
-    ) in enumerate(
-        candidates,
-        1
-    ):
-
-        print(
-            index,
-            "|",
-            info["section"],
-            "|",
-            info["title"]
-        )
-
-    print(
-        "========================================"
-    )
+    # ----------------------------------------------
+    # 記事取得
+    # ----------------------------------------------
 
     articles = []
 
-    for index, (
-        url,
-        info
-    ) in enumerate(
-        candidates,
-        1
-    ):
+    for index, (url, section) in enumerate(urls):
 
         print(
-            "----------------------------------------"
-        )
-
-        print(
-            "記事",
-            index,
-            "/",
-            len(candidates)
-        )
-
-        print(
-            "URL:",
+            f"[{index + 1}/{len(urls)}]",
             url
         )
 
-        print(
-            "一覧タイトル:",
-            info["title"]
-        )
-
-        article = extract_article_info(
-            url,
-            info["title"]
-        )
+        article = fetch_article(url)
 
         if article:
 
-            articles.append(
-                article
-            )
+            article["_section"] = section
 
+            articles.append(article)
+
+        # アクセス間隔
         time.sleep(0.2)
+
+    # ----------------------------------------------
+    # 取得失敗時
+    # ----------------------------------------------
 
     if not articles:
 
@@ -857,137 +645,109 @@ def main():
         )
 
         print(
-            "既存JSONは変更しません。"
+            "既存JSONを維持します。"
         )
 
         return
 
-    unique_articles = {}
+    # ----------------------------------------------
+    # 重複除去
+    # ----------------------------------------------
+
+    unique = {}
 
     for article in articles:
 
-        unique_articles[
-            article["link"]
-        ] = article
+        unique[article["link"]] = article
 
     articles = list(
-        unique_articles.values()
+        unique.values()
     )
 
+    # ----------------------------------------------
+    # 実際の公開日時順
+    # ----------------------------------------------
+
     articles.sort(
-        key=lambda article:
-            article.get(
-                "_date",
-                ""
-            ),
+        key=lambda x: x.get(
+            "_datetime",
+            ""
+        ),
         reverse=True
     )
 
-    articles = articles[
-        :MAX_ITEMS
-    ]
+    # ----------------------------------------------
+    # 最大件数
+    # ----------------------------------------------
 
-    print(
-        "========================================"
-    )
+    articles = articles[:MAX_ITEMS]
 
-    print(
-        "最終保存記事一覧"
-    )
+    # ----------------------------------------------
+    # 不要な内部項目を削除
+    # ----------------------------------------------
 
-    print(
-        "========================================"
-    )
-
-    for index, article in enumerate(
-        articles,
-        1
-    ):
-
-        print(
-            index,
-            "|",
-            article["pubDate"],
-            "|",
-            article["title"]
-        )
-
-        print(
-            "   ",
-            article["link"]
-        )
-
-    print(
-        "========================================"
-    )
-
-    print(
-        "保存記事数:",
-        len(articles)
-    )
+    output_items = []
 
     for article in articles:
 
-        article.pop(
-            "_date",
-            None
+        output_items.append(
+            {
+                "title": article["title"],
+                "link": article["link"],
+                "pubDate": article["pubDate"],
+            }
         )
+
+    # ----------------------------------------------
+    # 保存
+    # ----------------------------------------------
 
     temp_file = OUTPUT + ".tmp"
 
-    try:
+    with open(
+        temp_file,
+        "w",
+        encoding="utf-8"
+    ) as f:
 
-        with open(
-            temp_file,
-            "w",
-            encoding="utf-8"
-        ) as f:
+        json.dump(
+            output_items,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
 
-            json.dump(
-                articles,
-                f,
-                ensure_ascii=False,
-                indent=2
-            )
+        f.write("\n")
 
-            f.write("\n")
+    os.replace(
+        temp_file,
+        OUTPUT
+    )
 
-        os.replace(
-            temp_file,
-            OUTPUT
+    # ----------------------------------------------
+    # 結果表示
+    # ----------------------------------------------
+
+    print()
+    print(
+        "取得完了:",
+        len(output_items),
+        "件"
+    )
+
+    print(
+        "最新記事:"
+    )
+
+    if output_items:
+
+        print(
+            output_items[0]["pubDate"],
+            output_items[0]["title"]
         )
 
         print(
-            "JSON更新完了"
-        )
-
-        print(
-            "保存記事数:",
-            len(articles)
-        )
-
-    except Exception as e:
-
-        print(
-            "JSON保存エラー:",
-            repr(e)
-        )
-
-        try:
-
-            if os.path.exists(
-                temp_file
-            ):
-
-                os.remove(
-                    temp_file
-                )
-
-        except Exception:
-            pass
-
-        print(
-            "既存JSONは変更しません。"
+            output_items[0]["link"]
         )
 
 
