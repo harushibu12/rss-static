@@ -1,5 +1,10 @@
 [
   {
+    "title": "Micronの業績、利益額は4四半期連続、利益率は3四半期連続で過去最高を更新",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/06/news031.html",
+    "pubDate": "Wed, 07 Oct 2026 00:30:00 +0900"
+  },
+  {
     "title": "ダイヤモンドのエッチング深さを「原子層レベルで」制御、金沢大",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/06/news021.html",
     "pubDate": "Tue, 06 Oct 2026 22:30:00 +0900"
@@ -18,6 +23,16 @@
     "title": "レゾナックが300mm SiC基板を初公開 サンプル提供も",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/06/news036.html",
     "pubDate": "Tue, 06 Oct 2026 19:30:00 +0900"
+  },
+  {
+    "title": "91本の電子線で数十倍速く微小欠陥を検査 日立ハイテク",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/06/news020.html",
+    "pubDate": "Tue, 06 Oct 2026 18:30:00 +0900"
+  },
+  {
+    "title": "エンジニアの生存戦略――手持ちの「不完全な道具」を使い倒して前進する",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/05/news033.html",
+    "pubDate": "Tue, 06 Oct 2026 00:30:00 +0900"
   },
   {
     "title": "日立とファナック、工場でフィジカルAI実証 27年度確立へ",
@@ -48,20 +63,5 @@
     "title": "半導体生産拠点に動き 前工程から先端パッケージまで",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/03/news006.html",
     "pubDate": "Sat, 03 Oct 2026 18:00:00 +0900"
-  },
-  {
-    "title": "ニデック、岸田前社長の辞任経緯語る",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news066.html",
-    "pubDate": "Sat, 03 Oct 2026 01:31:00 +0900"
-  },
-  {
-    "title": "データ移動減らすCXLデバイス メモリ近傍に1000超のRISC-Vコア",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news025.html",
-    "pubDate": "Fri, 02 Oct 2026 20:00:00 +0900"
-  },
-  {
-    "title": "Infineon、タイに後工程の新拠点 将来性見据えた重要ハブ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/02/news029.html",
-    "pubDate": "Fri, 02 Oct 2026 19:30:00 +0900"
   }
 ]
