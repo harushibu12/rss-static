@@ -2,7 +2,6 @@ import json
 import re
 import time
 from datetime import datetime, timezone, timedelta
-from html.parser import HTMLParser
 from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
@@ -20,6 +19,10 @@ USER_AGENT = (
     "Chrome/140.0.0.0 Safari/537.36"
 )
 
+
+# --------------------------------
+# HTML文字コード判定
+# --------------------------------
 
 def decode_html(data):
 
@@ -52,6 +55,10 @@ def decode_html(data):
     return candidates[0][1]
 
 
+# --------------------------------
+# HTML取得
+# --------------------------------
+
 def fetch_html(url):
 
     req = Request(
@@ -81,116 +88,107 @@ def fetch_html(url):
 
 
 # --------------------------------
-# Top Stories / 新着記事の範囲を取得
+# Top Stories ～ FEATURES直前
 # --------------------------------
 
-def find_section(html, heading):
+def find_main_article_area(html):
 
-    pos = html.find(heading)
+    start = html.find(
+        "Top Stories"
+    )
 
-    if pos < 0:
+    if start < 0:
         return None
 
-    next_positions = []
+    # Top Storiesより後ろにある
+    # 最初のFEATURESを探す
+    end = html.find(
+        "FEATURES",
+        start
+    )
 
-    for next_heading in (
-        "Top Stories",
-        "新着記事",
-        "Editor's",
-        "ランキング",
-        "おすすめ",
-        "特集"
-    ):
+    if end < 0:
 
-        if next_heading == heading:
-            continue
-
-        p = html.find(
-            next_heading,
-            pos + len(heading)
-        )
-
-        if p >= 0:
-            next_positions.append(p)
-
-    if next_positions:
-
-        end = min(next_positions)
-
-    else:
-
+        # FEATURESが見つからない場合の保険
         end = min(
             len(html),
-            pos + 50000
+            start + 100000
         )
 
-    return html[pos:end]
+    return html[start:end]
 
 
 # --------------------------------
 # 記事URL取得
 # --------------------------------
 
-def extract_urls(section):
+def extract_article_urls(section):
 
     if not section:
         return []
 
     urls = []
 
+    # hrefを全部調べる
     for match in re.finditer(
         r'href\s*=\s*["\']([^"\']+)["\']',
         section,
         re.IGNORECASE
     ):
 
-        href = match.group(1)
+        href = match.group(1).strip()
 
-        if href.startswith("//"):
+        # 相対URL
+        if href.startswith("/"):
 
-            href = "https:" + href
-
-        elif href.startswith("/"):
-
-            href = urljoin(
+            url = urljoin(
                 BASE_URL,
                 href
             )
 
-        elif not href.startswith("http"):
+        # //eetimes...
+        elif href.startswith("//"):
 
-            href = urljoin(
+            url = "https:" + href
+
+        # 完全URL
+        elif href.startswith("http"):
+
+            url = href
+
+        else:
+
+            url = urljoin(
                 BASE_URL,
                 href
             )
 
-        # EE Times Japanの記事だけ
-        if not href.startswith(
+        # EE Times記事だけ
+        if not url.startswith(
             "https://eetimes.itmedia.co.jp/"
         ):
             continue
 
-        # 記事ページだけ
-        if "/ee/articles/" not in href:
+        if "/ee/articles/" not in url:
             continue
 
-        # subtop等を除外
-        if "/subtop/" in href:
+        # 広告・その他を除外
+        if "/subtop/" in url:
             continue
 
-        # クエリ等を削除
-        href = href.split("#")[0]
-        href = href.split("?")[0]
+        # クエリ・フラグメント除去
+        url = url.split("?")[0]
+        url = url.split("#")[0]
 
-        if href not in urls:
+        if url not in urls:
 
-            urls.append(href)
+            urls.append(url)
 
     return urls
 
 
 # --------------------------------
-# 記事タイトル
+# 記事タイトル取得
 # --------------------------------
 
 def extract_title(html):
@@ -209,7 +207,8 @@ def extract_title(html):
         m = re.search(
             pattern,
             html,
-            re.IGNORECASE | re.DOTALL
+            re.IGNORECASE |
+            re.DOTALL
         )
 
         if not m:
@@ -252,7 +251,7 @@ def extract_title(html):
 
 
 # --------------------------------
-# 公開日時
+# 公開日時取得
 # --------------------------------
 
 def extract_datetime(html):
@@ -279,7 +278,8 @@ def extract_datetime(html):
         m = re.search(
             pattern,
             html,
-            re.IGNORECASE | re.DOTALL
+            re.IGNORECASE |
+            re.DOTALL
         )
 
         if not m:
@@ -287,6 +287,7 @@ def extract_datetime(html):
 
         value = m.group(1).strip()
 
+        # ISO形式
         try:
 
             dt = datetime.fromisoformat(
@@ -307,6 +308,7 @@ def extract_datetime(html):
         except Exception:
             pass
 
+        # 日本語形式
         m2 = re.match(
             r"(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})",
             value
@@ -328,6 +330,7 @@ def extract_datetime(html):
             except Exception:
                 pass
 
+        # yyyy/mm/dd
         m2 = re.match(
             r"(\d{4})/(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})",
             value
@@ -349,6 +352,7 @@ def extract_datetime(html):
             except Exception:
                 pass
 
+        # yyyy-mm-dd
         m2 = re.match(
             r"(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{2})",
             value
@@ -381,9 +385,13 @@ def fetch_article(url):
 
     try:
 
-        html = fetch_html(url)
+        html = fetch_html(
+            url
+        )
 
-        title = extract_title(html)
+        title = extract_title(
+            html
+        )
 
         if not title:
 
@@ -393,11 +401,13 @@ def fetch_article(url):
 
             return None
 
-        dt = extract_datetime(html)
+        dt = extract_datetime(
+            html
+        )
 
         if dt is None:
 
-            # URLの日付を使用
+            # URLの日付を予備利用
             m = re.search(
                 r"/articles/(\d{2})(\d{2})/(\d{2})/",
                 url
@@ -450,7 +460,10 @@ def main():
     print("EE Times取得開始")
     print("================================")
 
+    # --------------------------------
     # トップページ
+    # --------------------------------
+
     try:
 
         html = fetch_html(
@@ -476,67 +489,45 @@ def main():
 
         return
 
-    # Top Stories
-    top_section = find_section(
-        html,
-        "Top Stories"
-    )
+    # --------------------------------
+    # Top Stories～FEATURES直前
+    # --------------------------------
 
-    # 新着記事
-    new_section = find_section(
-        html,
-        "新着記事"
+    section = find_main_article_area(
+        html
     )
 
     print(
-        "Top Stories:",
-        top_section is not None
+        "Top Stories～新着記事範囲:",
+        section is not None
     )
 
-    print(
-        "新着記事:",
-        new_section is not None
+    if not section:
+
+        print(
+            "記事範囲を取得できませんでした。"
+        )
+
+        print(
+            "既存JSONを維持します。"
+        )
+
+        return
+
+    # --------------------------------
+    # 記事URL
+    # --------------------------------
+
+    urls = extract_article_urls(
+        section
     )
-
-    # URL取得
-    urls = []
-
-    if top_section:
-
-        urls.extend(
-            extract_urls(
-                top_section
-            )
-        )
-
-    if new_section:
-
-        urls.extend(
-            extract_urls(
-                new_section
-            )
-        )
-
-    # 重複除去
-    unique_urls = []
-
-    seen = set()
-
-    for url in urls:
-
-        if url in seen:
-            continue
-
-        seen.add(url)
-
-        unique_urls.append(url)
 
     print(
         "記事URL候補:",
-        len(unique_urls)
+        len(urls)
     )
 
-    if not unique_urls:
+    if not urls:
 
         print(
             "記事URLがありません。"
@@ -548,16 +539,19 @@ def main():
 
         return
 
-    # 記事取得
+    # --------------------------------
+    # 各記事取得
+    # --------------------------------
+
     items = []
 
     for number, url in enumerate(
-        unique_urls,
+        urls,
         1
     ):
 
         print(
-            f"[{number}/{len(unique_urls)}]",
+            f"[{number}/{len(urls)}]",
             url
         )
 
@@ -580,7 +574,10 @@ def main():
             0.2
         )
 
-    # 日付順
+    # --------------------------------
+    # 新しい順
+    # --------------------------------
+
     items.sort(
         key=lambda x: x["_dt"],
         reverse=True
@@ -606,7 +603,10 @@ def main():
 
         del item["_dt"]
 
+    # --------------------------------
     # JSON保存
+    # --------------------------------
+
     with open(
         OUTPUT,
         "w",
