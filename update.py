@@ -88,51 +88,19 @@ def fetch_html(url):
 
 
 # --------------------------------
-# Top Stories ～ FEATURES直前
+# トップページ全体から記事URL取得
 # --------------------------------
 
-def find_main_article_area(html):
+def extract_article_urls(html):
 
-    start = html.find(
-        "Top Stories"
-    )
-
-    if start < 0:
-        return None
-
-    # Top Storiesより後ろにある
-    # 最初のFEATURESを探す
-    end = html.find(
-        "FEATURES",
-        start
-    )
-
-    if end < 0:
-
-        # FEATURESが見つからない場合の保険
-        end = min(
-            len(html),
-            start + 100000
-        )
-
-    return html[start:end]
-
-
-# --------------------------------
-# 記事URL取得
-# --------------------------------
-
-def extract_article_urls(section):
-
-    if not section:
+    if not html:
         return []
 
     urls = []
 
-    # hrefを全部調べる
     for match in re.finditer(
         r'href\s*=\s*["\']([^"\']+)["\']',
-        section,
+        html,
         re.IGNORECASE
     ):
 
@@ -163,7 +131,7 @@ def extract_article_urls(section):
                 href
             )
 
-        # EE Times記事だけ
+        # EE Times Japanの記事だけ
         if not url.startswith(
             "https://eetimes.itmedia.co.jp/"
         ):
@@ -172,7 +140,7 @@ def extract_article_urls(section):
         if "/ee/articles/" not in url:
             continue
 
-        # 広告・その他を除外
+        # 記事以外の特殊ページを除外
         if "/subtop/" in url:
             continue
 
@@ -181,14 +149,13 @@ def extract_article_urls(section):
         url = url.split("#")[0]
 
         if url not in urls:
-
             urls.append(url)
 
     return urls
 
 
 # --------------------------------
-# 記事タイトル取得
+# タイトル取得
 # --------------------------------
 
 def extract_title(html):
@@ -378,6 +345,34 @@ def extract_datetime(html):
 
 
 # --------------------------------
+# URLから日付を取得
+# --------------------------------
+
+def extract_url_datetime(url):
+
+    m = re.search(
+        r"/articles/(\d{2})(\d{2})/(\d{2})/",
+        url
+    )
+
+    if not m:
+        return None
+
+    try:
+
+        return datetime(
+            2000 + int(m.group(1)),
+            int(m.group(2)),
+            int(m.group(3)),
+            tzinfo=JST
+        )
+
+    except Exception:
+
+        return None
+
+
+# --------------------------------
 # 記事取得
 # --------------------------------
 
@@ -405,31 +400,23 @@ def fetch_article(url):
             html
         )
 
+        # 公開日時が取得できなければ
+        # URLの日付を使用
         if dt is None:
 
-            # URLの日付を予備利用
-            m = re.search(
-                r"/articles/(\d{2})(\d{2})/(\d{2})/",
+            dt = extract_url_datetime(
                 url
             )
 
-            if m:
+        # それでも取れなければ古い記事扱い
+        if dt is None:
 
-                dt = datetime(
-                    2000 + int(m.group(1)),
-                    int(m.group(2)),
-                    int(m.group(3)),
-                    tzinfo=JST
-                )
-
-            else:
-
-                dt = datetime(
-                    1970,
-                    1,
-                    1,
-                    tzinfo=JST
-                )
+            dt = datetime(
+                1970,
+                1,
+                1,
+                tzinfo=JST
+            )
 
         return {
             "title": title,
@@ -461,7 +448,7 @@ def main():
     print("================================")
 
     # --------------------------------
-    # トップページ
+    # トップページ取得
     # --------------------------------
 
     try:
@@ -490,40 +477,15 @@ def main():
         return
 
     # --------------------------------
-    # Top Stories～FEATURES直前
+    # 記事URL取得
     # --------------------------------
 
-    section = find_main_article_area(
+    urls = extract_article_urls(
         html
     )
 
     print(
-        "Top Stories～新着記事範囲:",
-        section is not None
-    )
-
-    if not section:
-
-        print(
-            "記事範囲を取得できませんでした。"
-        )
-
-        print(
-            "既存JSONを維持します。"
-        )
-
-        return
-
-    # --------------------------------
-    # 記事URL
-    # --------------------------------
-
-    urls = extract_article_urls(
-        section
-    )
-
-    print(
-        "記事URL候補:",
+        "トップページ内の記事URL候補:",
         len(urls)
     )
 
@@ -598,7 +560,10 @@ def main():
 
         return
 
-    # 内部データ削除
+    # --------------------------------
+    # 保存前に内部データ削除
+    # --------------------------------
+
     for item in items:
 
         del item["_dt"]
