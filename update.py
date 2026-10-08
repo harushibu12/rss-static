@@ -86,7 +86,6 @@ def decode_html(data, content_type=""):
     seen = set()
 
     for enc in encodings:
-
         key = enc.lower()
 
         if key in seen:
@@ -118,14 +117,12 @@ def decode_html(data, content_type=""):
         key=lambda x: x[0]
     )
 
-    text = candidates[0][1]
-
     print(
         "文字コード:",
         candidates[0][2]
     )
 
-    return text
+    return candidates[0][1]
 
 
 # ==================================================
@@ -133,7 +130,6 @@ def decode_html(data, content_type=""):
 # ==================================================
 
 def fetch_html(url):
-
     req = Request(
         url,
         headers={
@@ -153,7 +149,6 @@ def fetch_html(url):
     ) as response:
 
         data = response.read()
-
         content_type = response.headers.get(
             "Content-Type",
             ""
@@ -170,12 +165,10 @@ def fetch_html(url):
 # ==================================================
 
 def extract_article_urls(html):
-
     if not html:
         return []
 
     urls = []
-
     seen = set()
 
     pattern = re.compile(
@@ -190,44 +183,35 @@ def extract_article_urls(html):
         if not href:
             continue
 
-        # 相対URL
         if href.startswith("//"):
-
             url = "https:" + href
 
         elif href.startswith("/"):
-
             url = urljoin(
                 BASE_URL,
                 href
             )
 
         elif href.startswith("http"):
-
             url = href
 
         else:
-
             url = urljoin(
                 BASE_URL,
                 href
             )
 
-        # EE Times以外は除外
         if not url.startswith(
             "https://eetimes.itmedia.co.jp/"
         ):
             continue
 
-        # 記事URLだけ
         if "/ee/articles/" not in url:
             continue
 
-        # subtop等は除外
         if "/subtop/" in url:
             continue
 
-        # クエリ・アンカー除去
         url = url.split("?")[0]
         url = url.split("#")[0]
 
@@ -247,7 +231,6 @@ def extract_article_urls(html):
 def extract_title(html):
 
     patterns = [
-
         r'<meta[^>]+property=["\']og:title["\']'
         r'[^>]+content=["\']([^"\']+)',
 
@@ -270,8 +253,132 @@ def extract_title(html):
 
         title = m.group(1)
 
-        # HTMLタグ除去
         title = re.sub(
             r"<[^>]+>",
             "",
             title
+        )
+
+        title = (
+            title
+            .replace("&amp;", "&")
+            .replace("&quot;", '"')
+            .replace("&#39;", "'")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+        )
+
+        title = re.sub(
+            r"\s+",
+            " ",
+            title
+        ).strip()
+
+        title = re.sub(
+            r"\s*[|｜]\s*EE Times Japan.*$",
+            "",
+            title,
+            flags=re.IGNORECASE
+        ).strip()
+
+        if title:
+            return title
+
+    return None
+
+
+# ==================================================
+# 公開日時取得
+# ==================================================
+
+def extract_datetime(html):
+
+    patterns = [
+        r'<meta[^>]+property=["\']article:published_time["\']'
+        r'[^>]+content=["\']([^"\']+)',
+
+        r'<meta[^>]+content=["\']([^"\']+)["\']'
+        r'[^>]+property=["\']article:published_time["\']',
+
+        r'"datePublished"\s*:\s*"([^"]+)"',
+
+        r"'datePublished'\s*:\s*'([^']+)'",
+
+        r'"publishDate"\s*:\s*"([^"]+)"',
+
+        r"'publishDate'\s*:\s*'([^']+)'",
+
+        r'"published_time"\s*:\s*"([^"]+)"',
+
+        r"'published_time'\s*:\s*'([^']+)'",
+
+        r'(\d{4}年\d{1,2}月\d{1,2}日'
+        r'\s+\d{1,2}:\d{2})',
+
+        r'(\d{4}/\d{1,2}/\d{1,2}'
+        r'\s+\d{1,2}:\d{2})',
+
+        r'(\d{4}-\d{1,2}-\d{1,2}'
+        r'\s+\d{1,2}:\d{2})'
+    ]
+
+    for pattern in patterns:
+
+        m = re.search(
+            pattern,
+            html,
+            re.IGNORECASE | re.DOTALL
+        )
+
+        if not m:
+            continue
+
+        value = m.group(1).strip()
+
+        try:
+            dt = datetime.fromisoformat(
+                value.replace(
+                    "Z",
+                    "+00:00"
+                )
+            )
+
+            if dt.tzinfo is None:
+                dt = dt.replace(
+                    tzinfo=JST
+                )
+
+            return dt.astimezone(JST)
+
+        except Exception:
+            pass
+
+        for fmt in (
+            "%Y年%m月%d日 %H:%M",
+            "%Y/%m/%d %H:%M",
+            "%Y-%m-%d %H:%M"
+        ):
+
+            try:
+                return datetime.strptime(
+                    value,
+                    fmt
+                ).replace(
+                    tzinfo=JST
+                )
+
+            except Exception:
+                pass
+
+    return None
+
+
+# ==================================================
+# URLから日付取得
+# /articles/2610/07/news026.html
+# ==================================================
+
+def extract_url_datetime(url):
+
+    m = re.search(
+        r"/articles/
