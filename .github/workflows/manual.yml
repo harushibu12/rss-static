@@ -2,8 +2,8 @@ name: RSS更新
 
 on:
   schedule:
-    # 毎時17分（日本時間）
-    - cron: '17 * * * *'
+    # 毎時37分（日本時間）
+    - cron: '37 * * * *'
 
   # 手動実行
   workflow_dispatch:
