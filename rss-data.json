@@ -1,5 +1,40 @@
 [
   {
+    "title": "生成AIは前工程装置市場をどう変えた？ ――各装置の明暗と「After AI」の行方",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news054.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "AIエージェント普及でサーバCPU市場激変、Intelシェア低下でArm躍進へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news049.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "数個の見本で異音を検出 東芝のフィジカルAI向け技術",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news026.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ロボ用センサー3つの課題とは？ TDK最新センシング技術",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news056.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "「大手とは競わない」 タイワンセミコンダクターの車載戦略とは",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news045.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "マスクそのものがマイクに 声で発電、騒音は拾わず",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news033.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "「見えなかった正孔」を可視化 動作中FETで初成功",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news025.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
     "title": "DUV LED普及に貢献 安価／高効率な新構造、NICT開発",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news058.html",
     "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
@@ -10,53 +45,18 @@
     "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
   },
   {
-    "title": "Armの契約違反認定も、Qualcommへの賠償は「2ドル」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news044.html",
-    "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
     "title": "人間よりも断然運転がうまい……！ Waymoに乗ってきました",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news047.html",
     "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
   },
   {
-    "title": "千歳市に先端半導体のR＆D推進拠点を形成、三菱地所ら",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news035.html",
+    "title": "Armの契約違反認定も、Qualcommへの賠償は「2ドル」",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news044.html",
     "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "次世代半導体の基盤作りが進展 2nmや光チップレットも",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/24/news008.html",
-    "pubDate": "Sat, 24 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "メタバースデバイスの概要と動向",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/23/news025.html",
-    "pubDate": "Fri, 23 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "800Vを一気に6Vへ、ルネサスが開発するAIサーバ用20kW級電源",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/23/news043.html",
-    "pubDate": "Fri, 23 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「冷める前の光」サブピコ秒で抽出、光電融合の新原理",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/23/news040.html",
-    "pubDate": "Fri, 23 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "Intel、アリゾナ最先端工場「Fab 62」を28年末までに稼働へ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/23/news044.html",
-    "pubDate": "Fri, 23 Oct 2026 00:00:00 +0900"
   },
   {
     "title": "MATSim実践編――渋滞をシミュレーションしてみる",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/22/news008.html",
-    "pubDate": "Thu, 22 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "日本製2nm半導体で医用AI画像診断システム開発へ、LSTCら",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/22/news050.html",
     "pubDate": "Thu, 22 Oct 2026 00:00:00 +0900"
   },
   {
