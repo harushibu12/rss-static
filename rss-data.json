@@ -1,22 +1,17 @@
 [
   {
+    "title": "Infineon、「世界初」の300mm GaNパワー半導体量産施設を新設へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news088.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ニデック、永守重信氏ら旧役員9人に損害賠償請求へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news091.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
     "title": "生成AIは前工程装置市場をどう変えた？ ――各装置の明暗と「After AI」の行方",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news054.html",
-    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "AIエージェント普及でサーバCPU市場激変、Intelシェア低下でArm躍進へ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news049.html",
-    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "数個の見本で異音を検出 東芝のフィジカルAI向け技術",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news026.html",
-    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ロボ用センサー3つの課題とは？ TDK最新センシング技術",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news056.html",
     "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
   },
   {
@@ -25,39 +20,44 @@
     "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
   },
   {
+    "title": "リコー、インクジェット式ペロブスカイト太陽電池量産へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news084.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "逃げる25万人を「1人ずつ」再現！ 富士通デジタルツインにゴジラ襲来",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news078.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ミネベアミツミ米子工場に新棟開設 西日本の技術拠点に",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news053.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "シリコンの振動で送風！ 厚さ1mmの冷却チップ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news037.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "数個の見本で異音を検出 東芝のフィジカルAI向け技術",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news026.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "AIエージェント普及でサーバCPU市場激変、Intelシェア低下でArm躍進へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news049.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ロボ用センサー3つの課題とは？ TDK最新センシング技術",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news056.html",
+    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
+  },
+  {
     "title": "マスクそのものがマイクに 声で発電、騒音は拾わず",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news033.html",
     "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「見えなかった正孔」を可視化 動作中FETで初成功",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news025.html",
-    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "DUV LED普及に貢献 安価／高効率な新構造、NICT開発",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news058.html",
-    "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "台湾も直面する「半導体人材不足」 官民の積極対応促す",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news061.html",
-    "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "人間よりも断然運転がうまい……！ Waymoに乗ってきました",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news047.html",
-    "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "Armの契約違反認定も、Qualcommへの賠償は「2ドル」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/26/news044.html",
-    "pubDate": "Mon, 26 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "MATSim実践編――渋滞をシミュレーションしてみる",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/22/news008.html",
-    "pubDate": "Thu, 22 Oct 2026 00:00:00 +0900"
   },
   {
     "title": "「PCIM 2026」で見たパワー半導体最前線――電子版2026年10月号",
