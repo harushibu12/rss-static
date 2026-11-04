@@ -1,12 +1,32 @@
 [
   {
+    "title": "LATPのイオン伝導率10倍 安価な全固体電池へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news028.html",
+    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "レゾナックはなぜ「今」300mm SiC基板を開発したのか",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news055.html",
+    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
+  },
+  {
     "title": "神戸〜柏で775Gbps IOWN APNで長距離データ転送",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news026.html",
     "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
   },
   {
+    "title": "ルネサス／インフィニオンがスタートアップに求めるものとは",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news070.html",
+    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
+  },
+  {
     "title": "Infineon、1200V SiCをPCBに埋め込み EV向け",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news066.html",
+    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "「半導体屋」の本領発揮 Infineonが挑む量子チップ製造",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news046.html",
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
@@ -17,11 +37,6 @@
   {
     "title": "村田製が通期上方修正 データセンター向け売上高倍増",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news060.html",
-    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「半導体屋」の本領発揮 Infineonが挑む量子チップ製造",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news046.html",
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
@@ -47,21 +62,6 @@
   {
     "title": "2nm微細化の効果は絶大、Apple新スマホチップ「A20 Pro」分解",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news012.html",
-    "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "村田製、MLCCに1兆円投資 AIは「創業以来最大のチャンス」",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news084.html",
-    "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "富士フイルム、データ保存需要で磁気テープを5倍に増産",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news061.html",
-    "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "村田製作所、AIで品質／生産性向上へ アクセンチュアと3年提携",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news037.html",
     "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
   }
 ]
