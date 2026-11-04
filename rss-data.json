@@ -1,5 +1,10 @@
 [
   {
+    "title": "神戸〜柏で775Gbps IOWN APNで長距離データ転送",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news026.html",
+    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
+  },
+  {
     "title": "Infineon、1200V SiCをPCBに埋め込み EV向け",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news066.html",
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
@@ -15,13 +20,13 @@
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
-    "title": "車載SoC世界市場、2035年に380億米ドル規模へ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news024.html",
+    "title": "「半導体屋」の本領発揮 Infineonが挑む量子チップ製造",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news046.html",
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
-    "title": "「半導体屋」の本領発揮 Infineonが挑む量子チップ製造",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news046.html",
+    "title": "車載SoC世界市場、2035年に380億米ドル規模へ",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news024.html",
     "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
@@ -40,6 +45,11 @@
     "pubDate": "Sat, 31 Oct 2026 00:00:00 +0900"
   },
   {
+    "title": "2nm微細化の効果は絶大、Apple新スマホチップ「A20 Pro」分解",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news012.html",
+    "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
+  },
+  {
     "title": "村田製、MLCCに1兆円投資 AIは「創業以来最大のチャンス」",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news084.html",
     "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
@@ -53,15 +63,5 @@
     "title": "村田製作所、AIで品質／生産性向上へ アクセンチュアと3年提携",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news037.html",
     "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "製造現場にフィジカルAIをどう実装するか",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/30/news001.html",
-    "pubDate": "Fri, 30 Oct 2026 00:00:00 +0900"
-  },
-  {
-    "title": "生成AIは前工程装置市場をどう変えた？ ――各装置の明暗と「After AI」の行方",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2610/27/news054.html",
-    "pubDate": "Tue, 27 Oct 2026 00:00:00 +0900"
   }
 ]
