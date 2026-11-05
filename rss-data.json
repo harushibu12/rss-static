@@ -1,5 +1,40 @@
 [
   {
+    "title": "ソニー「複数シナリオを想定」、SamsungのApple向けCIS参入報道の中",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news089.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ソニー半導体は2Q過去最高益、スマホ市場2割減も増益確保",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news085.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "Intelの26年Q3決算に見るPC販売の苦境",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news059.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "TOTO、福岡に次世代セラミック品生産棟 投資600億円",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news064.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "パワーデバイスの最新動向やAIの電力課題を語る 「パワーエレクトロニクス イニシアチブ」開催！",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news029.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "光ファイバー1本で10W超給電 火災検知信号も双方向伝送",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news037.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
+    "title": "ソニーの新市場参入に注目 2026年10月の記事ランキング",
+    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news031.html",
+    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
+  },
+  {
     "title": "「データセンターは電力グリッドの一部」 制御の鍵はSST／SSCB",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news038.html",
     "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
@@ -15,11 +50,6 @@
     "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
   },
   {
-    "title": "パワーデバイスの最新動向やAIの電力課題を語る 「パワーエレクトロニクス イニシアチブ」開催！",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/05/news029.html",
-    "pubDate": "Thu, 05 Nov 2026 00:00:00 +0900"
-  },
-  {
     "title": "Infineon初のRISC-V車載マイコン、その実力と開発戦略を聞いた",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news068.html",
     "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
@@ -28,36 +58,6 @@
     "title": "HDD大手Seagateの四半期業績、4四半期連続で利益率が過去最高を更新",
     "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news019.html",
     "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "LATPのイオン伝導率10倍 安価な全固体電池へ",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news028.html",
-    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "レゾナックはなぜ「今」300mm SiC基板を開発したのか",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news055.html",
-    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "神戸〜柏で775Gbps IOWN APNで長距離データ転送",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/04/news026.html",
-    "pubDate": "Wed, 04 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "ルネサス／インフィニオンがスタートアップに求めるものとは",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news070.html",
-    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "Infineon、1200V SiCをPCBに埋め込み EV向け",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news066.html",
-    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
-  },
-  {
-    "title": "「半導体屋」の本領発揮 Infineonが挑む量子チップ製造",
-    "link": "https://eetimes.itmedia.co.jp/ee/articles/2611/02/news046.html",
-    "pubDate": "Mon, 02 Nov 2026 00:00:00 +0900"
   },
   {
     "title": "2nm微細化の効果は絶大、Apple新スマホチップ「A20 Pro」分解",
